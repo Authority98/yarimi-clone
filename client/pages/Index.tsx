@@ -12,44 +12,76 @@ export default function Index() {
     <div className="bg-[radial-gradient(80%_60%_at_50%_0%,rgba(37,99,235,0.18),transparent),radial-gradient(40%_30%_at_80%_10%,rgba(6,182,212,0.18),transparent)]">
       {/* HERO */}
       <section className="hero-glow border-b border-white/5">
-        <div className="container pt-16 pb-20">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+        <div className="container pt-16 pb-20" style={{paddingLeft: '24px', paddingRight: '24px'}}>
+          <div className="grid items-center" style={{gridTemplateColumns: '65% 35%', gap: '0rem'}}>
             {/* Hero Content */}
             <div className="text-center lg:text-left">
               <div className="mx-auto lg:mx-0 inline-flex items-center gap-2 rounded-full border px-6 py-2 overflow-hidden relative bg-[#00408C] border-[#70B2FF] max-w-[280px]">
                 <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#00408C] to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#00408C] to-transparent z-10 pointer-events-none"></div>
-                <div className="animate-marquee-continuous whitespace-nowrap flex" style={{color: '#fff', fontFamily: 'Montserrat, sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: '20px'}}>
+                <div className="animate-marquee-continuous whitespace-nowrap flex" style={{color: '#fff', fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontWeight: 400, fontSize: '12px', lineHeight: '20px'}}>
                   <span>OPPORTUNITY - KNOWLEDGE - NETWORK - OPPORTUNITY - KNOWLEDGE - NETWORK - </span>
                 </div>
               </div>
-              <h1 className="mt-6 text-4xl font-extrabold leading-tight md:text-6xl">
+              <h1 className="mt-6 leading-tight" style={{fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontSize: '58px', fontWeight: 'extrabold'}}>
                 The <span className="gradient-text">#1 Place</span> To Learn
                 <br />
                 Forex Trading
               </h1>
-              <p className="mx-auto lg:mx-0 mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
-                A complete, step-by-step university to master the markets with
-                expert mentorship and a proven curriculum.
-              </p>
               <div className="mt-8 flex flex-col items-center lg:items-start justify-center lg:justify-start gap-4 sm:flex-row">
-                <Button asChild size="lg" className="px-8">
-                  <a href="#pricing">Enroll Now</a>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="px-8">
-                  <a href="#curriculum" className="inline-flex items-center gap-2">
-                    <PlayCircle className="size-5" />
-                    View Curriculum
-                  </a>
-                </Button>
+                <a 
+                  href="#pricing"
+                  style={{
+                    backgroundImage: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                    borderRadius: '5px',
+                    marginBottom: '0',
+                    padding: '14px 70px',
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '16px',
+                    fontWeight: '700',
+                    color: 'white',
+                    textDecoration: 'none',
+                    display: 'inline-block',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
+                  Enroll Now
+                </a>
+              </div>
+              <div className="mt-6 flex items-center gap-3">
+                <img 
+                  src="/Traders Enrolled.png" 
+                  alt="Traders Enrolled" 
+                  style={{width: '74px', height: 'auto'}}
+                />
+                <div className="flex items-center gap-1">
+                  <span style={{
+                    fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
+                    fontSize: '16px',
+                    lineHeight: '20px',
+                    color: '#ffffff'
+                  }}>
+                    12,173+
+                  </span>
+                  <span style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '20px',
+                    color: '#b7b7b7'
+                  }}>
+                    Traders Enrolled
+                  </span>
+                </div>
               </div>
             </div>
             {/* Hero Image */}
-            <div className="relative">
+            <div className="relative flex justify-end">
               <img
                 src="/hero-image.png"
                 alt="Forex Trading Hero"
-                className="w-full h-auto rounded-2xl shadow-2xl"
+                style={{width: '550px', height: 'auto'}}
+                className="rounded-2xl"
               />
             </div>
           </div>

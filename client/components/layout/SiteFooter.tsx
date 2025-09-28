@@ -4,7 +4,7 @@ export default function SiteFooter() {
       <div className="container py-10 grid gap-6 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-            <div className="grid size-8 place-items-center rounded-md bg-gradient-to-br from-blue-500 to-cyan-400 text-white font-extrabold">Y</div>
+            <img src="/logo.png" alt="Yarimi University Logo" className="size-8" />
             <span className="text-lg font-semibold tracking-tight">Yarimi University</span>
           </div>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">Learn forex trading with a clear roadmap, hands-on guidance, and a supportive community.
