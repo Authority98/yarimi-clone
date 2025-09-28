@@ -11,24 +11,26 @@ export default function Index() {
   return (
     <div className="bg-[radial-gradient(80%_60%_at_50%_0%,rgba(37,99,235,0.18),transparent),radial-gradient(40%_30%_at_80%_10%,rgba(6,182,212,0.18),transparent)]">
       {/* HERO */}
-      <section className="hero-glow border-b border-white/5">
-        <div className="container pt-16 pb-20" style={{paddingLeft: '24px', paddingRight: '24px'}}>
-          <div className="grid items-center" style={{gridTemplateColumns: '65% 35%', gap: '0rem'}}>
+      <section className="hero-glow border-b border-white/5 relative" style={{backgroundColor: '#030a17'}}>
+        <div className="blur-shape"></div>
+        <div className="hero-background"></div>
+        <div className="container pb-20" style={{paddingLeft: '24px', paddingRight: '24px', paddingTop: '86px'}}>
+          <div className="grid items-center" style={{gridTemplateColumns: '58% 42%', gap: '0rem'}}>
             {/* Hero Content */}
-            <div className="text-center lg:text-left">
-              <div className="mx-auto lg:mx-0 inline-flex items-center gap-2 rounded-full border px-6 py-2 overflow-hidden relative bg-[#00408C] border-[#70B2FF] max-w-[280px]">
+            <div className="text-center lg:text-left" style={{position: 'relative', zIndex: 10}}>
+              <div className="mx-auto lg:mx-0 inline-flex items-center gap-2 rounded-full px-6 py-2 overflow-hidden relative bg-[#00408C] max-w-[280px]" style={{border: '1px solid #70b1ff'}}>
                 <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#00408C] to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#00408C] to-transparent z-10 pointer-events-none"></div>
                 <div className="animate-marquee-continuous whitespace-nowrap flex" style={{color: '#fff', fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontWeight: 400, fontSize: '12px', lineHeight: '20px'}}>
                   <span>OPPORTUNITY - KNOWLEDGE - NETWORK - OPPORTUNITY - KNOWLEDGE - NETWORK - </span>
                 </div>
               </div>
-              <h1 className="mt-6 leading-tight" style={{fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontSize: '58px', fontWeight: 'extrabold'}}>
-                The <span className="gradient-text">#1 Place</span> To Learn
+              <h1 className="leading-tight" style={{fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontSize: '58px', fontWeight: 'extrabold', marginTop: '15px', lineHeight: '65px'}}>
+                The <span style={{background: 'linear-gradient(80deg, var(--blue), var(--light-blue) 90%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent'}}>#1 Place</span> To Learn
                 <br />
                 Forex Trading
               </h1>
-              <div className="mt-8 flex flex-col items-center lg:items-start justify-center lg:justify-start gap-4 sm:flex-row">
+              <div className="flex flex-col items-center lg:items-start justify-center lg:justify-start gap-4 sm:flex-row" style={{marginTop: '14px'}}>
                 <a 
                   href="#pricing"
                   style={{
@@ -48,7 +50,7 @@ export default function Index() {
                   Enroll Now
                 </a>
               </div>
-              <div className="mt-6 flex items-center gap-3">
+              <div className="flex items-center gap-3" style={{marginTop: '20px', opacity: '0.8'}}>
                 <img 
                   src="/Traders Enrolled.png" 
                   alt="Traders Enrolled" 
@@ -76,7 +78,7 @@ export default function Index() {
               </div>
             </div>
             {/* Hero Image */}
-            <div className="relative flex justify-end">
+            <div className="relative flex justify-end" style={{position: 'relative', zIndex: 10}}>
               <img
                 src="/hero-image.png"
                 alt="Forex Trading Hero"
@@ -84,6 +86,54 @@ export default function Index() {
                 className="rounded-2xl"
               />
             </div>
+          </div>
+          
+          {/* FEATURES ROW */}
+          <div className="mt-20" style={{position: 'relative', zIndex: 10, marginTop: '85px'}}>
+            <div className="footer-divider change2 change3"></div>
+            <div className="flex items-center justify-center" style={{gap: '55px'}}>
+              <div className="flex items-center gap-3">
+                <img src="/Instant Access.png" alt="Instant Access" style={{width: '24px', height: 'auto'}} />
+                <span style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 'bold',
+                  color: '#fff',
+                  fontSize: '14px',
+                  lineHeight: '20px'
+                }}>INSTANT ACCESS</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <img src="/Forex Eaducation.png" alt="Forex Education" style={{width: '30px', height: 'auto'}} />
+                <span style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 'bold',
+                  color: '#fff',
+                  fontSize: '14px',
+                  lineHeight: '20px'
+                }}>FOREX EDUCATION</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <img src="/Community.png" alt="Community" style={{width: '30px', height: 'auto'}} />
+                <span style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 'bold',
+                  color: '#fff',
+                  fontSize: '14px',
+                  lineHeight: '20px'
+                }}>COMMUNITY</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <img src="/Secure Payment.png" alt="Secure Payment" style={{width: '21px', height: 'auto'}} />
+                <span style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 'bold',
+                  color: '#fff',
+                  fontSize: '14px',
+                  lineHeight: '20px'
+                }}>SECURE PAYMENT</span>
+              </div>
+            </div>
+            <div className="footer-divider change2 change3"></div>
           </div>
         </div>
       </section>
