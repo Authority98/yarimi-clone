@@ -16,13 +16,17 @@ export default function Index() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Hero Content */}
             <div className="text-center lg:text-left">
-              <div className="mx-auto lg:mx-0 inline-flex items-center gap-2 rounded-full border border-white/10 bg-secondary/40 px-3 py-1 text-xs text-muted-foreground">
-                <Shield className="size-3.5" /> Trusted by 3,000+ traders
+              <div className="mx-auto lg:mx-0 inline-flex items-center gap-2 rounded-full border px-6 py-2 overflow-hidden relative bg-[#00408C] border-[#70B2FF] max-w-[280px]">
+                <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#00408C] to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#00408C] to-transparent z-10 pointer-events-none"></div>
+                <div className="animate-marquee-continuous whitespace-nowrap flex" style={{color: '#fff', fontFamily: 'Montserrat, sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: '20px'}}>
+                  <span>OPPORTUNITY - KNOWLEDGE - NETWORK - OPPORTUNITY - KNOWLEDGE - NETWORK - </span>
+                </div>
               </div>
               <h1 className="mt-6 text-4xl font-extrabold leading-tight md:text-6xl">
-                The #1 Place To Learn
+                The <span className="gradient-text">#1 Place</span> To Learn
                 <br />
-                <span className="gradient-text">Forex Trading</span>
+                Forex Trading
               </h1>
               <p className="mx-auto lg:mx-0 mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
                 A complete, step-by-step university to master the markets with
