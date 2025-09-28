@@ -138,6 +138,122 @@ export default function Index() {
         </div>
       </section>
 
+      {/* VIDEO TRAINING SECTION */}
+      <section id="training" className="py-20" style={{backgroundColor: '#030a17'}}>
+        <div className="container max-w-5xl">
+          {/* Arrow pointing down */}
+          <div className="flex justify-center mb-8">
+            <div className="w-16 h-16 rounded-full border-2 border-blue-400 flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#70b1ff" strokeWidth="2">
+                <path d="M7 13l3 3 7-7"/>
+                <path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8"/>
+                <path d="M12 19V5M5 12l7 7 7-7"/>
+              </svg>
+            </div>
+          </div>
+          
+          {/* Heading */}
+          <h1 className="text-center mb-8" style={{
+            fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
+            fontSize: '48px',
+            fontWeight: 'bold',
+            color: '#000',
+            lineHeight: '56px'
+          }}>
+            <strong>Yarimi University Presents...</strong>
+          </h1>
+          
+          {/* Video Container */}
+          <div className="relative mb-8" style={{
+            backgroundColor: '#f5f5f5',
+            borderRadius: '20px',
+            padding: '40px',
+            maxWidth: '920px',
+            margin: '0 auto'
+          }}>
+            <div className="relative" style={{
+              aspectRatio: '16/9',
+              borderRadius: '14px',
+              overflow: 'hidden',
+              backgroundColor: '#000'
+            }}>
+              {/* Video thumbnail */}
+              <img 
+                src="https://embed-ssl.wistia.com/deliveries/24cf3306e209e34bc41128a1b809f0a0.webp?image_crop_resized=1280x720"
+                alt="Video Thumbnail"
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Play button overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <button className="bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-200 rounded-full p-6">
+                  <svg width="60" height="60" viewBox="0 0 60 60" fill="white">
+                    <path d="M20 15L45 30L20 45V15Z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            {/* Offer text */}
+            <div className="text-center mt-6">
+              <h2 style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: '36px',
+                fontWeight: '600',
+                color: '#000',
+                fontStyle: 'italic',
+                marginBottom: '20px'
+              }}>
+                Limited Time Offer: £99 One Time
+              </h2>
+              
+              {/* Enroll button */}
+              <button style={{
+                background: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                borderRadius: '8px',
+                padding: '16px 48px',
+                fontFamily: 'Montserrat, sans-serif',
+                fontSize: '18px',
+                fontWeight: '600',
+                color: 'white',
+                border: 'none',
+                cursor: 'pointer',
+                marginBottom: '20px'
+              }}>
+                Enroll Now
+              </button>
+              
+              {/* Traders enrolled */}
+              <div className="flex items-center justify-center gap-3">
+                <img 
+                  src="/Traders Enrolled.png" 
+                  alt="Traders Enrolled" 
+                  style={{width: '80px', height: 'auto'}}
+                />
+                <div className="flex items-center gap-2">
+                  <span style={{
+                    fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
+                    fontSize: '18px',
+                    fontWeight: 'bold',
+                    color: '#666'
+                  }}>
+                    12,173+
+                  </span>
+                  <span style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontSize: '18px',
+                    fontWeight: '400',
+                    color: '#666'
+                  }}>
+                    Traders Enrolled
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PRESENTS / VIDEO */}
       <section className="border-b border-white/5 bg-card">
         <div className="container grid gap-6 py-12 md:grid-cols-[1fr_420px] md:gap-10">
