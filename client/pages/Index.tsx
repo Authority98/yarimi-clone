@@ -14,7 +14,7 @@ export default function Index() {
       <section className="hero-glow border-b border-white/5 relative" style={{backgroundColor: '#030a17'}}>
         <div className="blur-shape"></div>
         <div className="hero-background"></div>
-        <div className="container pb-20" style={{paddingLeft: '24px', paddingRight: '24px', paddingTop: '86px'}}>
+        <div className="container" style={{paddingLeft: '24px', paddingRight: '24px', paddingTop: '86px', paddingBottom: '72px'}}>
           <div className="grid items-center" style={{gridTemplateColumns: '58% 42%', gap: '0rem'}}>
             {/* Hero Content */}
             <div className="text-center lg:text-left" style={{position: 'relative', zIndex: 10}}>
@@ -139,117 +139,230 @@ export default function Index() {
       </section>
 
       {/* VIDEO TRAINING SECTION */}
-      <section id="training" className="py-20" style={{backgroundColor: '#030a17'}}>
-        <div className="container max-w-5xl">
-          {/* Arrow pointing down */}
-          <div className="flex justify-center mb-8">
-            <div className="w-16 h-16 rounded-full border-2 border-blue-400 flex items-center justify-center">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#70b1ff" strokeWidth="2">
-                <path d="M7 13l3 3 7-7"/>
-                <path d="m21 21-6-6m6 6v-4.8m0 4.8h-4.8"/>
-                <path d="M12 19V5M5 12l7 7 7-7"/>
-              </svg>
-            </div>
+      <section id="training" className="relative" style={{backgroundColor: '#030a17', paddingLeft: '76px', paddingRight: '76px', paddingTop: '0px', paddingBottom: '72px'}}>
+        {/* Arrow positioned at top of white container */}
+        <div className="arrow-hero">
+          <div className="div-block-35">
+            <img src="/Arrow 1.png" loading="lazy" alt="" className="image-25" />
           </div>
-          
+        </div>
+        
+        <div className="relative" style={{
+          backgroundColor: '#f5f5f5',
+          borderRadius: '20px',
+          padding: '40px 28px',
+          width: '100%',
+          paddingTop: '80px' // Extra space for arrow
+        }}>
           {/* Heading */}
-          <h1 className="text-center mb-8" style={{
+          <h1 className="text-center" style={{
             fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
             fontSize: '48px',
             fontWeight: 'bold',
             color: '#000',
-            lineHeight: '56px'
+            lineHeight: '44px',
+            fontStyle: 'italic',
+            marginBottom: '65px'
           }}>
             <strong>Yarimi University Presents...</strong>
           </h1>
           
           {/* Video Container */}
-          <div className="relative mb-8" style={{
-            backgroundColor: '#f5f5f5',
-            borderRadius: '20px',
-            padding: '40px',
+          <div className="relative" style={{
             maxWidth: '920px',
-            margin: '0 auto'
+            margin: '0 auto 32px auto'
           }}>
-            <div className="relative" style={{
-              aspectRatio: '16/9',
-              borderRadius: '14px',
-              overflow: 'hidden',
-              backgroundColor: '#000'
+            {/* Wistia Video Embed - Using iframe method */}
+            <div style={{
+              position: 'relative',
+              paddingBottom: '56.25%',
+              height: 0,
+              overflow: 'hidden'
             }}>
-              {/* Video thumbnail */}
-              <img 
-                src="https://embed-ssl.wistia.com/deliveries/24cf3306e209e34bc41128a1b809f0a0.webp?image_crop_resized=1280x720"
-                alt="Video Thumbnail"
-                className="w-full h-full object-cover"
+              <iframe 
+                src="https://fast.wistia.net/embed/iframe/ix16917j27?videoFoam=true" 
+                title="Yarimi University Video"
+                allow="autoplay; fullscreen"
+                allowFullScreen
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  height: '100%',
+                  border: 'none',
+                  borderRadius: '14px'
+                }}
               />
-              
-              {/* Play button overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-200 rounded-full p-6">
-                  <svg width="60" height="60" viewBox="0 0 60 60" fill="white">
-                    <path d="M20 15L45 30L20 45V15Z" />
-                  </svg>
-                </button>
-              </div>
             </div>
+          </div>
             
-            {/* Offer text */}
-            <div className="text-center mt-6">
-              <h2 style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontSize: '36px',
-                fontWeight: '600',
-                color: '#000',
-                fontStyle: 'italic',
-                marginBottom: '20px'
-              }}>
-                Limited Time Offer: £99 One Time
-              </h2>
-              
-              {/* Enroll button */}
-              <button style={{
-                background: 'linear-gradient(80deg, #70b1ff, #0074ff)',
-                borderRadius: '8px',
-                padding: '16px 48px',
-                fontFamily: 'Montserrat, sans-serif',
+          {/* Offer text */}
+          <div className="text-center">
+            <h2 style={{
+              fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
+              fontSize: '30px',
+              fontWeight: 'bold',
+              color: '#000',
+              fontStyle: 'italic',
+              lineHeight: '44px',
+              marginBottom: '50px'
+            }}>
+              <strong>Limited Time Offer: £99 One Time</strong>
+            </h2>
+            
+            {/* Enroll button */}
+            <a 
+              href="#pricing"
+              style={{
+                backgroundImage: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                borderRadius: '5px',
+                padding: '14px 50px',
+                fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
                 fontSize: '18px',
                 fontWeight: '600',
+                lineHeight: '20px',
                 color: 'white',
-                border: 'none',
-                cursor: 'pointer',
-                marginBottom: '20px'
-              }}>
-                Enroll Now
-              </button>
-              
-              {/* Traders enrolled */}
-              <div className="flex items-center justify-center gap-3">
-                <img 
-                  src="/Traders Enrolled.png" 
-                  alt="Traders Enrolled" 
-                  style={{width: '80px', height: 'auto'}}
-                />
-                <div className="flex items-center gap-2">
-                  <span style={{
-                    fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
-                    fontSize: '18px',
-                    fontWeight: 'bold',
-                    color: '#666'
-                  }}>
-                    12,173+
-                  </span>
-                  <span style={{
-                    fontFamily: 'Montserrat, sans-serif',
-                    fontSize: '18px',
-                    fontWeight: '400',
-                    color: '#666'
-                  }}>
-                    Traders Enrolled
-                  </span>
-                </div>
+                textDecoration: 'none',
+                display: 'inline-block',
+                transition: 'transform .2s',
+                boxShadow: '0 0 12px #00000040',
+                marginBottom: '40px'
+              }}
+            >
+              Enroll Now
+            </a>
+            
+            {/* Traders enrolled */}
+            <div className="flex items-center justify-center gap-2">
+              <img 
+                src="/Traders Enrolled.png" 
+                alt="Traders Enrolled" 
+                style={{width: '74px', height: 'auto'}}
+              />
+              <div className="flex items-center gap-1">
+                <span style={{
+                  fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                  color: '#000',
+                  lineHeight: '20px'
+                }}>
+                  12,173+
+                </span>
+                <span style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontSize: '16px',
+                  fontWeight: '400',
+                  color: '#030a17',
+                  lineHeight: '20px'
+                }}>
+                  Traders Enrolled
+                </span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Third Section - What is Yarimi University */}
+      <section className="w-full" style={{ padding: '65px 24px 60px', backgroundColor: '#030a17' }}>
+        <div className="mx-auto text-center" style={{ maxWidth: '920px' }}>
+          {/* Pre-heading */}
+          <p 
+            className="font-montserrat uppercase"
+            style={{
+              backgroundImage: 'linear-gradient(80deg, var(--blue), var(--light-blue))',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              textAlign: 'center',
+              textTransform: 'uppercase',
+              fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
+              fontSize: '16px',
+              lineHeight: '20px',
+              marginBottom: '24px'
+            }}
+          >
+            HERE'S WHAT AWAITS YOU...
+          </p>
+          
+          {/* Main Heading */}
+          <h2 
+            className="font-montserrat font-bold"
+            style={{
+              color: '#fff',
+              textAlign: 'left',
+              WebkitTextStrokeColor: '#fff',
+              WebkitTextFillColor: 'transparent',
+              backgroundImage: 'linear-gradient(#fff, #999)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              flexFlow: 'row',
+              justifyContent: 'center',
+              fontSize: '48px',
+              lineHeight: '55px',
+              marginBottom: '40px',
+              fontWeight: '700',
+              display: 'flex'
+            }}
+          >
+            What is Yarimi University ?
+          </h2>
+          
+          {/* Body Text */}
+          <div className="max-w-4xl mx-auto space-y-6">
+            <p 
+              className="font-montserrat"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontStyle: 'normal',
+                fontWeight: '600',
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '16px',
+                lineHeight: '24px'
+              }}
+            >
+              Yarimi University is a forex educational program made by traders, for traders.
+            </p>
+            
+            <p 
+              className="font-montserrat"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontStyle: 'normal',
+                fontWeight: '600',
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '16px',
+                lineHeight: '24px'
+              }}
+            >
+              It consists of step-by-step training covering EVERY aspect of getting started with forex trading, successful strategies, and how to actually become profitable. You'll be taken from knowing nothing..."zero" to everything..."hero".
+            </p>
+            
+            <p 
+              className="font-montserrat"
+              style={{
+                fontFamily: 'Montserrat, sans-serif',
+                fontStyle: 'normal',
+                fontWeight: '600',
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontSize: '16px',
+                lineHeight: '24px'
+              }}
+            >
+              Yarimi University has everything covered for you. We even have complementary bonuses, such as FREE quarterly live events where you can meet Yarimi in person, gifted-funded accounts to top performing students, and much much more!
+            </p>
+          </div>
+          
+          {/* Course Modules Visual */}
+          <div className="mt-16 flex justify-center">
+            <img 
+              src="/Course Module.png" 
+              alt="Course Modules" 
+              className="h-auto"
+              style={{ width: '812px' }}
+            />
           </div>
         </div>
       </section>
