@@ -83,16 +83,6 @@ export default function Curriculum() {
         {/* Curriculum Items */}
         {curriculumData.map((item, index) => (
           <div key={item.id} className="container change1 change2">
-            {/* Image Section */}
-            <div className="div-block-21" style={{ order: index % 2 === 0 ? 9999 : 'initial' }}>
-              <img 
-                src={item.image} 
-                alt={item.title}
-                className="image-18"
-                width="344"
-              />
-            </div>
-            
             {/* Content Section */}
             <div className="div-block-20">
               {/* Phase Label */}
@@ -102,9 +92,7 @@ export default function Curriculum() {
               <div className="div-block-42">
                 <h1 className="heading-12">
                   {item.title}
-                  <span className="text-span-6">
-                    <img src="/Verified tick.png" alt="Verified" />
-                  </span>
+                  <span className="text-span-6">c</span>
                 </h1>
               </div>
               
@@ -119,6 +107,16 @@ export default function Curriculum() {
                   </a>
                 ))}
               </div>
+            </div>
+            
+            {/* Image Section - Always on Right */}
+            <div className="div-block-21">
+              <img 
+                src={item.image} 
+                alt={item.title}
+                className="image-18"
+                width="344"
+              />
             </div>
           </div>
         ))}
