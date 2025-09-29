@@ -34,21 +34,21 @@ const timelineData: TimelineItem[] = [
     id: 4,
     title: "Bonus #1: Trading Psychology Course",
     description: "Master the mental game of trading with our comprehensive psychology course designed to help you overcome emotional barriers.",
-    image: "/Bonus #1.png",
+    image: "/Bonus 1.png",
     icon: "/Timeline Mark.png"
   },
   {
     id: 5,
     title: "Bonus #2: Advanced Risk Management",
     description: "Learn advanced risk management techniques to protect your capital and maximize your trading potential.",
-    image: "/Bonus #2.png",
+    image: "/Bonus 2.png",
     icon: "/Timeline Mark.png"
   },
   {
     id: 6,
     title: "Bonus #3: Live Trading Sessions",
     description: "Join exclusive live trading sessions where you can watch real-time market analysis and decision-making processes.",
-    image: "/Bonus #3.jpg",
+    image: "/Bonus 3.jpg",
     icon: "/Timeline Mark.png"
   }
 ];
