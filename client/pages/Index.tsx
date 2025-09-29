@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { CheckCircle2, PlayCircle, Shield, Star, Trophy } from "lucide-react";
 import Timeline from "@/components/Timeline";
+import Curriculum from "@/components/Curriculum";
 
 export default function Index() {
   return (
@@ -370,6 +371,9 @@ export default function Index() {
 
       {/* TIMELINE SECTION - What's Included */}
       <Timeline />
+
+      {/* CURRICULUM SECTION */}
+      <Curriculum />
 
       {/* PRESENTS / VIDEO */}
       <section className="border-b border-white/5 bg-card">

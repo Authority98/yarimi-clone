@@ -5,7 +5,6 @@ interface TimelineItem {
   title: string;
   description: string;
   image: string;
-  icon: string;
 }
 
 const timelineData: TimelineItem[] = [
@@ -13,50 +12,25 @@ const timelineData: TimelineItem[] = [
     id: 1,
     title: "A - Z Detailed Forex Education",
     description: "The YU program is designed to teach you the strategies and fundamentals to become a profitable trader.",
-    image: "/Timeline image 1.png",
-    icon: "/Forex Eaducation.png"
+    image: "/Timeline image 1.png"
   },
   {
     id: 2,
     title: "Community Of Like-Minded People",
     description: "Not only are you receiving the program, but also the YU community. Where you can network with other students and get your questions answered.",
-    image: "/Timeline image 2.png",
-    icon: "/Community.png"
+    image: "/Timeline image 2.png"
   },
   {
     id: 3,
     title: "Access To Free Quarterly Events",
     description: "We like to give back to our students as much as we can. That's why we decide to host quarterly events that anyone inside Yarimi University can attend for FREE.",
-    image: "/Timeline image 3.png",
-    icon: "/Instant Access.png"
-  },
-  {
-    id: 4,
-    title: "Bonus #1: Trading Psychology Course",
-    description: "Master the mental game of trading with our comprehensive psychology course designed to help you overcome emotional barriers.",
-    image: "/Bonus 1.png",
-    icon: "/Timeline Mark.png"
-  },
-  {
-    id: 5,
-    title: "Bonus #2: Advanced Risk Management",
-    description: "Learn advanced risk management techniques to protect your capital and maximize your trading potential.",
-    image: "/Bonus 2.png",
-    icon: "/Timeline Mark.png"
-  },
-  {
-    id: 6,
-    title: "Bonus #3: Live Trading Sessions",
-    description: "Join exclusive live trading sessions where you can watch real-time market analysis and decision-making processes.",
-    image: "/Bonus 3.jpg",
-    icon: "/Timeline Mark.png"
+    image: "/Timeline image 3.png"
   }
 ];
 
 export default function Timeline() {
   const [activeItems, setActiveItems] = useState<Set<number>>(new Set());
-  const [progressActive, setProgressActive] = useState(false);
-  const [movingMarkerActive, setMovingMarkerActive] = useState(false);
+  const [progressHeight, setProgressHeight] = useState(0);
   const timelineRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -70,13 +44,13 @@ export default function Timeline() {
       const timelineTop = scrollTop + timelineRect.top;
       const timelineHeight = timelineRect.height;
 
-      // Check if timeline section is in view
-      const sectionStart = timelineTop - windowHeight * 0.8;
-      const sectionEnd = timelineTop + timelineHeight + windowHeight * 0.2;
-      const isInSection = scrollTop >= sectionStart && scrollTop <= sectionEnd;
-      
-      setProgressActive(isInSection);
-      setMovingMarkerActive(isInSection);
+      // Calculate progress bar height based on scroll position
+      // Start animation very early when timeline section is approaching
+      const timelineStart = timelineTop + 170; // Start from where the line actually begins
+      const sectionStart = timelineStart - windowHeight;
+      const sectionEnd = timelineStart + (timelineHeight - 320);
+      const scrollProgress = Math.max(0, Math.min(1, (scrollTop + windowHeight - sectionStart) / (sectionEnd - sectionStart)));
+      setProgressHeight(scrollProgress);
 
       // Check which items should be active
       const newActiveItems = new Set<number>();
@@ -88,7 +62,7 @@ export default function Timeline() {
         const itemCenter = itemRect.top + itemRect.height / 2;
         const threshold = windowHeight * 0.7;
         
-        if (itemCenter < threshold && isInSection) {
+        if (itemCenter < threshold) {
           newActiveItems.add(index);
         }
       });
@@ -104,56 +78,106 @@ export default function Timeline() {
 
   return (
     <section className="timeline-section">
+      {/* Background Image */}
+      <div className="timeline-bg-image">
+        <img src="/Timeline Section Background.png" alt="Timeline Background" />
+      </div>
+      
       <div className="timeline-container" ref={timelineRef}>
-        {/* Timeline Progress Line */}
-        <div className="timeline_progress-2">
-          <div 
-            className={`timeline_progress-bar-2 ${progressActive ? 'active' : ''}`}
-          />
-        </div>
-
-        {/* Moving Timeline Marker */}
-        <div className={`timeline-moving-marker ${movingMarkerActive ? 'active' : ''}`}>
-          <img src="/Timeline Mark.png" alt="Timeline Marker" />
-        </div>
-
         {/* Section Title */}
         <div className="timeline-title">
-          <p>YOUR ROADMAP TO SUCCESS...</p>
-          <h2>What's Included</h2>
+          <h2 
+            style={{
+              color: '#fff',
+              textAlign: 'center',
+              fontSize: '48px',
+              lineHeight: '55px',
+              marginBottom: '15px',
+              fontWeight: '700',
+              display: 'flex',
+              flexFlow: 'row',
+              justifyContent: 'center',
+              fontFamily: 'Montserrat-Bold, Montserrat, sans-serif'
+            }}
+          >
+            What's Included
+          </h2>
+          <p 
+            style={{
+              backgroundImage: 'linear-gradient(80deg, var(--blue), var(--light-blue))',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              textAlign: 'center',
+              textTransform: 'uppercase',
+              fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
+              fontSize: '16px',
+              lineHeight: '20px',
+              marginBottom: '50px'
+            }}
+          >
+            YOUR ROADMAP TO SUCCESS...
+          </p>
         </div>
 
-        {/* Timeline Items */}
-        {timelineData.map((item, index) => (
-          <div
-            key={item.id}
-            ref={(el) => (itemRefs.current[index] = el)}
-            className={`timeline-item ${activeItems.has(index) ? 'active' : ''}`}
-          >
-            <div className={`timeline-content ${index % 2 === 1 ? 'reverse' : ''}`}>
-              {/* Timeline Image */}
-              <div className="timeline-image">
-                <img src={item.image} alt={item.title} />
-              </div>
-
-              {/* Timeline Text Content */}
-              <div className="timeline-text">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-
-              {/* Timeline Icon */}
-              <div className="timeline-icon">
-                <img src={item.icon} alt="Timeline Icon" />
-              </div>
-            </div>
-
-            {/* Timeline Marker */}
-            <div className="timeline-marker">
-              <img src="/Timeline Mark.png" alt="Timeline Marker" />
-            </div>
+        {/* Timeline Component */}
+        <div className="timeline_component">
+          {/* Timeline Progress Line */}
+          <div className="timeline_progress-2">
+            <div 
+              className={`timeline_progress-bar-2 ${progressHeight > 0 ? 'active' : ''}`}
+              style={{ height: `${progressHeight * 100}%` }}
+            />
           </div>
-        ))}
+
+          {/* Timeline Items */}
+          {timelineData.map((item, index) => (
+            <div
+              key={item.id}
+              ref={(el) => (itemRefs.current[index] = el)}
+              className={`timeline_item-2 ${activeItems.has(index) ? 'active' : ''}`}
+            >
+              {/* Left Column */}
+              <div className={`timeline_left-2 ${index % 2 === 0 ? 'show-image' : 'show-content'}`}>
+                {index % 2 === 0 ? (
+                  // Show image on left for even items (0, 2, 4...)
+                  <div className="timeline_image-wrapper">
+                    <img src={item.image} alt={item.title} className="timeline-image" />
+                  </div>
+                ) : (
+                  // Show content on left for odd items (1, 3, 5...)
+                  <div className="margin-bottom-xlarge">
+                    <h3>{item.title}</h3>
+                    <div className="timeline_text">{item.description}</div>
+                  </div>
+                )}
+              </div>
+
+              {/* Center Column - Timeline Marker */}
+              <div className="timeline_centre-2">
+                <div className="timeline_circle-2">
+                  <img src="/Timeline Mark.png" alt="Timeline Marker" />
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div className={`timeline_right-2 ${index % 2 === 0 ? 'show-content' : 'show-image'}`}>
+                {index % 2 === 0 ? (
+                  // Show content on right for even items (0, 2, 4...)
+                  <div className="margin-bottom-xlarge">
+                    <h3>{item.title}</h3>
+                    <div className="timeline_text">{item.description}</div>
+                  </div>
+                ) : (
+                  // Show image on right for odd items (1, 3, 5...)
+                  <div className="timeline_image-wrapper">
+                    <img src={item.image} alt={item.title} className="timeline-image" />
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
 
         {/* Enroll Button */}
         <div className="text-center mt-20">
@@ -162,10 +186,11 @@ export default function Timeline() {
             style={{
               backgroundImage: 'linear-gradient(80deg, #70b1ff, #0074ff)',
               borderRadius: '5px',
-              padding: '14px 50px',
-              fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
-              fontSize: '18px',
-              fontWeight: '600',
+              padding: '14px 70px',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '16px',
+              fontWeight: '700',
+              lineHeight: '20px',
               color: 'white',
               textDecoration: 'none',
               display: 'inline-block',
