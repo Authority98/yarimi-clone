@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CheckCircle2, PlayCircle, Shield, Star, Trophy } from "lucide-react";
+import Timeline from "@/components/Timeline";
 
 export default function Index() {
   return (
@@ -366,6 +367,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* TIMELINE SECTION - What's Included */}
+      <Timeline />
 
       {/* PRESENTS / VIDEO */}
       <section className="border-b border-white/5 bg-card">
