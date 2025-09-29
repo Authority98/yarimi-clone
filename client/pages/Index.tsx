@@ -8,6 +8,8 @@ import {
 import { CheckCircle2, PlayCircle, Shield, Star, Trophy } from "lucide-react";
 import Timeline from "@/components/Timeline";
 import Curriculum from "@/components/Curriculum";
+import Pricing from "@/components/Pricing";
+import StudentsWins from "@/components/StudentsWins";
 
 export default function Index() {
   return (
@@ -375,6 +377,12 @@ export default function Index() {
       {/* CURRICULUM SECTION */}
       <Curriculum />
 
+      {/* PRICING SECTION */}
+      <Pricing />
+
+      {/* STUDENTS WINS */}
+      <StudentsWins />
+
       {/* PRESENTS / VIDEO */}
       <section className="border-b border-white/5 bg-card">
         <div className="container grid gap-6 py-12 md:grid-cols-[1fr_420px] md:gap-10">
@@ -530,25 +538,6 @@ export default function Index() {
               <p>Community + accountability</p>
             </div>
             <Button size="lg" className="mt-8 w-full sm:w-auto px-10">Enroll Now</Button>
-          </div>
-        </div>
-      </section>
-
-      {/* STUDENTS WINS */}
-      <section id="wins" className="border-b border-white/5">
-        <div className="container py-14">
-          <h2 className="text-center text-3xl font-bold md:text-4xl">Students Wins</h2>
-          <div className="mt-8 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            <div className="flex min-w-max gap-4">
-              {Array.from({ length: 12 }).map((_, i) => (
-                <img
-                  key={i}
-                  className="h-36 w-auto rounded-lg border border-white/10 object-cover"
-                  src={`https://picsum.photos/seed/win${i}/480/300`}
-                  alt={`win-${i}`}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>

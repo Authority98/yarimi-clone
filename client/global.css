@@ -118,6 +118,7 @@
     @apply bg-background text-foreground antialiased;
     font-family: "Poppins", "Inter", ui-sans-serif, system-ui, -apple-system,
       Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    overflow-x: hidden;
   }
 }
 
@@ -657,5 +658,298 @@
     .div-block-4 {
       justify-content: center;
     }
+  }
+  
+  /* Pricing Section Styles */
+  .payment {
+    z-index: 1;
+    background-color: #030a17;
+    padding: 142px 24px 100px 24px;
+    position: relative;
+    overflow: visible;
+  }
+  
+  .div-block-28 {
+    filter: blur(250px);
+    background-color: #0113b780;
+    width: 380px;
+    height: 380px;
+    position: absolute;
+    inset: 21% 0% 0% auto;
+  }
+  
+  .container.change3 {
+    box-shadow: none;
+    background-color: #070c3400;
+    background-image: none;
+    border: 1px solid #0019ff00;
+    border-radius: 16px;
+  }
+  
+  .text-block-17 {
+    background-color: #0000;
+    background-image: linear-gradient(80deg, #0074ff, #70b1ff);
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-family: 'Montserrat-Bold', Montserrat, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .heading-10 {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    padding-bottom: 0;
+    font-size: 48px;
+    line-height: 54px;
+    color: #fff;
+    font-family: 'Montserrat-Bold', Montserrat, sans-serif;
+    font-weight: bold;
+  }
+  
+  .divier {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #70b1ff, transparent);
+    margin: 30px auto;
+    max-width: 200px;
+  }
+  
+  .text-block-25 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+  
+  .div-block-5 {
+    grid-column-gap: 32px;
+    grid-row-gap: 32px;
+    border: 1px solid #70b1ff;
+    background-color: #070c34;
+    background-image: linear-gradient(#071633, #071633), linear-gradient(80deg, #0074ff12, #0074ff00 50%, #0074ff12), radial-gradient(circle farthest-side, #030a18, #fff0);
+    border-radius: 16px;
+    flex-flow: column;
+    order: 0;
+    justify-content: flex-start;
+    align-self: auto;
+    align-items: center;
+    width: 800px;
+    max-width: 100%;
+    height: auto;
+    margin: 60px auto 40px auto;
+    padding: 60px 20px 40px 20px;
+    display: flex;
+    box-shadow: 0 0 60px #0074ff40;
+  }
+  
+  .heading-18 {
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Montserrat-Bold', Montserrat, sans-serif;
+  }
+  
+  .image-32 {
+    margin-bottom: 25px;
+  }
+  
+  .heading-17 {
+    color: #fff;
+    text-align: center;
+    -webkit-text-stroke-color: #fdfff9;
+    margin-bottom: 5px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 36px;
+    font-family: 'Montserrat-Bold', Montserrat, sans-serif;
+  }
+  
+  .text-block-21 {
+    color: #ffffffb3;
+    text-align: center;
+    align-self: center;
+    margin-top: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .div-block-37 {
+    flex-flow: column;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    display: flex;
+  }
+  
+  .button-primary-2._22 {
+    order: -1;
+    margin-top: 16px;
+    padding: 12px 60px;
+    background-image: linear-gradient(80deg, #70b1ff, #0074ff);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Montserrat-Bold', Montserrat, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 0.2s ease;
+    display: inline-block;
+  }
+  
+  .button-primary-2._22:hover {
+    transform: translateY(-2px);
+  }
+  
+  .logo-holder {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+    opacity: 0.6;
+  }
+  
+  .logo-holder img {
+    width: 42px;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .heading-10 {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    
+    .div-block-5 {
+      width: 100%;
+      padding: 30px 20px;
+    }
+    
+    .heading-17 {
+      font-size: 36px;
+    }
+  }
+}
+
+/* Students Wins Section Styles */
+.wins-section {
+  z-index: 1;
+  color: #fff;
+  background-color: #fff;
+  padding: 105px 0 110px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container-7.overflow {
+  max-width: 2088px;
+  overflow: hidden;
+}
+
+.white-gradient {
+  color: #fff;
+  height: 200px;
+  position: absolute;
+  inset: 0% 0% auto;
+  background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0));
+  z-index: 2;
+}
+
+.white-gradient.down {
+  inset: auto 0% 0%;
+  background: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
+}
+
+.wins-section .h1-black-2,
+.wins-section h1.h1-black-2,
+.h1-black-2 {
+  color: #000 !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  -webkit-text-fill-color: #000 !important;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 0;
+  margin-bottom: 60px;
+  padding-bottom: 0;
+  font-size: 48px;
+  line-height: 44px;
+  display: flex;
+  font-family: 'Montserrat-Bold', Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+}
+
+.wins-wrap-wrap {
+  padding-bottom: 0;
+  position: relative;
+}
+
+.wins-wrap {
+  display: flex;
+  gap: 0;
+  margin-bottom: 12px;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.wins {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.wins.wins-bottom {
+  /* Additional styles for bottom row if needed */
+}
+
+.win-photo {
+  width: auto;
+  height: 200px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px -3px #00000059;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .h1-black-2 {
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+  
+  .win-photo {
+    height: 150px;
+  }
+  
+  .wins {
+    gap: 8px;
+  }
+  
+  .wins-section {
+    padding: 45px 0 50px 0;
+  }
+  
+  .wins-wrap {
+    margin-bottom: 8px;
   }
 }
