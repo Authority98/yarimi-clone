@@ -44,15 +44,17 @@ export default function Timeline() {
       const timelineTop = scrollTop + timelineRect.top;
       const timelineHeight = timelineRect.height;
 
-      // Calculate progress bar height based on scroll position
-      // Start animation very early when timeline section is approaching
-      const timelineStart = timelineTop + 170; // Start from where the line actually begins
-      const sectionStart = timelineStart - windowHeight;
-      const sectionEnd = timelineStart + (timelineHeight - 320);
-      const scrollProgress = Math.max(0, Math.min(1, (scrollTop + windowHeight - sectionStart) / (sectionEnd - sectionStart)));
+      // Calculate scroll progress for the timeline section
+      const sectionStart = timelineTop - windowHeight * 0.6; // Slightly slower start
+      const sectionEnd = timelineTop + timelineHeight - windowHeight * 0.4; // Slower completion
+      
+      // Calculate progress (0 to 1) - line fills from top to last mark
+      const rawProgress = (scrollTop - sectionStart) / (sectionEnd - sectionStart);
+      const scrollProgress = Math.max(0.1, Math.min(1, rawProgress)); // Start with 10% colored
+      
       setProgressHeight(scrollProgress);
 
-      // Check which items should be active
+      // Check which items should be active based on scroll position
       const newActiveItems = new Set<number>();
       
       itemRefs.current.forEach((ref, index) => {
@@ -125,8 +127,11 @@ export default function Timeline() {
           {/* Timeline Progress Line */}
           <div className="timeline_progress-2">
             <div 
-              className={`timeline_progress-bar-2 ${progressHeight > 0 ? 'active' : ''}`}
-              style={{ height: `${progressHeight * 100}%` }}
+              className="timeline_progress-bar-2"
+              style={{ 
+                height: `${progressHeight * 100}%`,
+                transition: progressHeight === 0.1 ? 'none' : 'height 0.12s ease-out'
+              }}
             />
           </div>
 

@@ -119,6 +119,8 @@ export default function SiteHeader() {
               display: 'inline-block',
               transition: 'all 0.2s ease'
             }}
+            onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1.1)'}
+            onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1)'}
           >
             <strong>Log In</strong>
           </a>
@@ -153,6 +155,8 @@ export default function SiteHeader() {
                 display: 'inline-block',
                 transition: 'all 0.2s ease'
               }}
+              onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1.1)'}
+              onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1)'}
             >
               <strong>Log In</strong>
             </a>
