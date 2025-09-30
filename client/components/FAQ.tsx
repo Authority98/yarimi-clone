@@ -68,7 +68,7 @@ const FAQ: React.FC = () => {
                   className="accordionpanel"
                   style={{
                     height: openAccordion === index ? 'auto' : '0px',
-                    padding: openAccordion === index ? '16px 30px' : '0px'
+                    padding: openAccordion === index ? '16px 0px' : '0px'
                   }}
                 >
                   <p className="faq-text">
