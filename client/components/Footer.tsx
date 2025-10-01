@@ -1,6 +1,6 @@
 const Footer: React.FC = () => {
   return (
-    <section className="footer">
+    <section className="footer" style={{ paddingLeft: '24px', paddingRight: '24px' }}>
       <div className="div-block-51">
         <div className="text-block-12">
           <strong>Yarimi University</strong>
