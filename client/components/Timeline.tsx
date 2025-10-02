@@ -41,16 +41,11 @@ export default function Timeline() {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
       const timelineRect = timelineRef.current.getBoundingClientRect();
-      const timelineTop = scrollTop + timelineRect.top;
-      const timelineHeight = timelineRect.height;
-
-      // Calculate scroll progress for the timeline section
-      const sectionStart = timelineTop - windowHeight * 0.6; // Slightly slower start
-      const sectionEnd = timelineTop + timelineHeight - windowHeight * 0.4; // Slower completion
       
-      // Calculate progress (0 to 1) - line fills from top to last mark
-      const rawProgress = (scrollTop - sectionStart) / (sectionEnd - sectionStart);
-      const scrollProgress = Math.max(0.1, Math.min(1, rawProgress)); // Start with 10% colored
+      // Start coloring when timeline section is halfway up the screen
+      // This means when the top of the timeline is at 50% of the viewport height
+      const triggerPoint = windowHeight * 0.5;
+      const scrollProgress = Math.max(0, Math.min(1, (triggerPoint - timelineRect.top) / (timelineRect.height + triggerPoint)));
       
       setProgressHeight(scrollProgress);
 
@@ -61,10 +56,11 @@ export default function Timeline() {
         if (!ref) return;
         
         const itemRect = ref.getBoundingClientRect();
-        const itemCenter = itemRect.top + itemRect.height / 2;
-        const threshold = windowHeight * 0.7;
+        // Activate items when they reach the center of the viewport
+        // This ensures items activate when the animated line reaches them
+        const threshold = windowHeight * 0.5;
         
-        if (itemCenter < threshold) {
+        if (itemRect.top < threshold) {
           newActiveItems.add(index);
         }
       });
@@ -79,7 +75,7 @@ export default function Timeline() {
   }, []);
 
   return (
-    <section className="timeline-section">
+    <section id="included" className="timeline-section">
       {/* Background Image */}
       <div className="timeline-bg-image">
         <img src="/Timeline Section Background.png" alt="Timeline Background" />
@@ -160,7 +156,7 @@ export default function Timeline() {
 
               {/* Center Column - Timeline Marker */}
               <div className="timeline_centre-2">
-                <div className="timeline_circle-2">
+                <div className={`timeline_circle-2 timeline_circle-${index}`}>
                   <img src="/Timeline Mark.png" alt="Timeline Marker" />
                 </div>
               </div>

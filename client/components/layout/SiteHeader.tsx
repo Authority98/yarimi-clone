@@ -11,7 +11,7 @@ export default function SiteHeader() {
         </a>
         <nav className="hidden items-center md:flex" style={{gap: '0'}}>
           <a 
-            href="#about" 
+            href="#training" 
             className="transition-all duration-200 hover:bg-[#1D232F]" 
             style={{
               fontFamily: 'Montserrat, sans-serif',
@@ -65,7 +65,7 @@ export default function SiteHeader() {
             Curriculum
           </a>
           <a 
-            href="#wins" 
+            href="#Testimonials" 
             className="transition-all duration-200 hover:bg-[#1D232F]" 
             style={{
               fontFamily: 'Montserrat, sans-serif',
@@ -132,10 +132,10 @@ export default function SiteHeader() {
       {open && (
         <div className="border-t border-white/5 md:hidden">
           <nav className="container grid gap-2 py-4">
-            <a href="#about" className="text-sm text-muted-foreground hover:text-foreground">Training</a>
+            <a href="#training" className="text-sm text-muted-foreground hover:text-foreground">Training</a>
             <a href="#included" className="text-sm text-muted-foreground hover:text-foreground">What's Included</a>
             <a href="#curriculum" className="text-sm text-muted-foreground hover:text-foreground">Curriculum</a>
-            <a href="#wins" className="text-sm text-muted-foreground hover:text-foreground">Testimonials</a>
+            <a href="#Testimonials" className="text-sm text-muted-foreground hover:text-foreground">Testimonials</a>
             <a href="#faq" className="text-sm text-muted-foreground hover:text-foreground">FAQ</a>
             <a 
               href="#pricing"
