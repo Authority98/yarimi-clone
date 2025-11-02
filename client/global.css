@@ -1335,7 +1335,7 @@
   width: 100%;
   position: relative;
   margin-bottom: 20px;
-  padding-top: 177.78%; /* 9:16 Aspect Ratio for reel/vertical video format */
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
   height: 0;
   border: 1px solid #fff;
   border-radius: 4px;
