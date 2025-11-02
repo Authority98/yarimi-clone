@@ -12,59 +12,51 @@ interface CurriculumItem {
 const curriculumData: CurriculumItem[] = [
   {
     id: 1,
-    phase: "Phase 1",
-    title: "Introduction",
-    description: "Everything starts off with understanding the basics. Building the foundational knowledge so you're set for the rest of your trading journey.",
+    phase: "Step 1",
+    title: "Custom Viral Strategy",
+    description: "We develop a blueprint specifically for your niche and audience. No one-size-fits-all approach. Your strategy is yours alone.",
     image: "/Phase 1.png",
-    buttons: ["Introduction", "Basics", "Roadmap"]
+    buttons: ["Analysis", "Planning", "Blueprint"]
   },
   {
     id: 2,
-    phase: "Phase 2", 
-    title: "Psychology & Mindset",
-    description: "Psychology & mindset are the 2 biggest driving factors when trading the currency markets. We make sure you understand the importance of this so you set yourself up for success.",
+    phase: "Step 2", 
+    title: "Professional Content Production",
+    description: "Award-winning creative team handles filming, editing, trending audio, and optimization. Quality content that converts.",
     image: "/Phase 2.png",
-    buttons: ["Self Mastery", "Mentality", "Habits"]
+    buttons: ["Filming", "Editing", "Optimization"]
   },
   {
     id: 3,
-    phase: "Phase 3",
-    title: "Trading Fundamentals", 
-    description: "The key to becoming a successful trader starts with understanding the fundamentals. Here, you'll learn the foundational knowledge in order to start off strong on your journey to success.",
+    phase: "Step 3",
+    title: "Multi-Platform Distribution", 
+    description: "We distribute strategically across TikTok, Instagram, and beyond. Maximum reach through strategic timing and optimization.",
     image: "/Phase 3.png",
-    buttons: ["Fundamentals", "Trading Concepts", "Principals"]
+    buttons: ["TikTok", "Instagram", "Multi-Platform"]
   },
   {
     id: 4,
-    phase: "Phase 4",
-    title: "In-Depth Forex Education",
-    description: "We'll teach you everything there is to forex trading. Providing you with 27+ video trainings around every topic of forex.",
+    phase: "Step 4",
+    title: "Revenue Conversion System",
+    description: "Views mean nothing without customers. Our system converts viral engagement into actual revenue and new business.",
     image: "/Phase 4.png",
-    buttons: ["Forex Education", "Training Modules", "Resources"]
+    buttons: ["Conversion", "Revenue", "Growth"]
   },
   {
     id: 5,
-    phase: "Bonus #1",
-    title: "In-Person Trading Workshops & Events",
-    description: "We do quarterly events for our students, completely for free. We hire out the venues, gift funded accounts, and even do small in-person workshops.",
+    phase: "Bonus",
+    title: "Monthly Performance Analytics",
+    description: "Complete transparency. Know exactly which videos brought customers, views, engagement, and ROI every single month.",
     image: "/Bonus 1.png",
-    buttons: ["In-Person Events", "Workshops", "Gift Funded Accounts"]
+    buttons: ["Analytics", "Reporting", "Transparency"]
   },
   {
     id: 6,
-    phase: "Bonus #2",
-    title: "Funded Trader Scholarship Program & Retreats",
-    description: "Top students of YU who meet certain requirements get entered into the funded scholarship program along with all expenses paid for trips to certain places around the world.",
+    phase: "Bonus",
+    title: "Direct Creative Team Access",
+    description: "Work directly with Sam and the award-winning team. Collaborative approach to ensure your brand authenticity shines.",
     image: "/Bonus 2.png",
-    buttons: ["Scholarship Program", "Road To 6 Figures", "Competitions"]
-  },
-  {
-    id: 7,
-    phase: "Bonus #3",
-    title: "150+ Hours Of Pre-Recorded Calls",
-    description: "Get access to 150+ hours of pre-recorded Sunday Market Breakdown calls. You can watch them anywhere, at anytime, and consume all the knowledge we have been dropping since Yarimi University started.",
-    image: "/Bonus 3.jpg",
-    buttons: ["Pre-Recorded", "150+ Hours", "Market Breakdowns"]
+    buttons: ["Collaboration", "Expert Support", "Direct Access"]
   }
 ];
 
@@ -78,7 +70,7 @@ export default function Curriculum() {
       
       <div className="container">
         {/* Section Heading */}
-        <h1 className="heading-8">Yarimi University Curriculum</h1>
+        <h1 className="heading-8">The BrandTok System</h1>
         
         {/* Curriculum Items */}
         {curriculumData.map((item, index) => (

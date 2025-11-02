@@ -13,8 +13,29 @@ import StudentsWins from "@/components/StudentsWins";
 import SuccessStories from "@/components/SuccessStories";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer.tsx";
+import { useEffect } from "react";
 
 export default function Index() {
+  useEffect(() => {
+    // Dynamically load Wistia scripts for proper React integration
+    const script1 = document.createElement('script');
+    script1.src = 'https://fast.wistia.com/embed/medias/ct3jnmk4vx.jsonp';
+    script1.async = true;
+    
+    const script2 = document.createElement('script');
+    script2.src = 'https://fast.wistia.com/assets/external/E-v1.js';
+    script2.async = true;
+    
+    document.body.appendChild(script1);
+    document.body.appendChild(script2);
+    
+    return () => {
+      // Clean up scripts when component unmounts
+      document.body.removeChild(script1);
+      document.body.removeChild(script2);
+    };
+  }, []);
+
   return (
     <div className="bg-[radial-gradient(80%_60%_at_50%_0%,rgba(37,99,235,0.18),transparent),radial-gradient(40%_30%_at_80%_10%,rgba(6,182,212,0.18),transparent)]">
       {/* HERO */}
@@ -29,14 +50,15 @@ export default function Index() {
                 <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#00408C] to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#00408C] to-transparent z-10 pointer-events-none"></div>
                 <div className="animate-marquee-continuous whitespace-nowrap flex" style={{color: '#fff', fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontWeight: 400, fontSize: '12px', lineHeight: '20px'}}>
-                  <span>OPPORTUNITY - KNOWLEDGE - NETWORK - OPPORTUNITY - KNOWLEDGE - NETWORK - </span>
+                  <span>ORGANIC GROWTH - VIRAL RESULTS - REVENUE SYSTEM -CONTENT POWERHOUSE</span>
                 </div>
               </div>
               <h1 className="hero-title leading-tight" style={{fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontSize: '58px', fontWeight: 'extrabold', marginTop: '15px', lineHeight: '65px'}}>
-                The <span style={{background: 'linear-gradient(80deg, var(--blue), var(--light-blue) 90%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent'}}>#1 Place</span> To Learn
-                <br />
-                Forex Trading
+                There Is A <span style={{background: 'linear-gradient(80deg, var(--blue), var(--light-blue) 90%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent'}}>"New Way"</span> To Predictably Get Viral Customers
               </h1>
+              <p style={{fontFamily: 'Montserrat, sans-serif', fontWeight: 400, fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.8)', marginTop: '20px', marginBottom: '30px', maxWidth: '90%'}}>
+                Get more views and new customers than you could possibly handle — without using paid ads. We do all the heavy lifting for you. Let us build your viral organic customer acquisition system and watch your business scale like never before.
+              </p>
               <div className="hero-button-container flex flex-col items-start justify-start gap-4" style={{marginTop: '14px'}}>
                 <a 
                   href="#pricing"
@@ -57,13 +79,13 @@ export default function Index() {
                   onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1.1)'}
                   onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1)'}
                 >
-                  Enroll Now
+                  Get Started Today
                 </a>
               </div>
               <div className="hero-stats flex items-center gap-3" style={{marginTop: '20px', opacity: '0.8'}}>
                 <img 
                   src="/Traders Enrolled.png" 
-                  alt="Traders Enrolled" 
+                  alt="Businesses Transformed" 
                   style={{width: '74px', height: 'auto'}}
                 />
                 <div className="flex items-center gap-1">
@@ -73,7 +95,7 @@ export default function Index() {
                     lineHeight: '20px',
                     color: '#ffffff'
                   }}>
-                    12,173+
+                    1000+
                   </span>
                   <span style={{
                     fontFamily: 'Montserrat, sans-serif',
@@ -82,7 +104,7 @@ export default function Index() {
                     lineHeight: '20px',
                     color: '#b7b7b7'
                   }}>
-                    Traders Enrolled
+                    Businesses Transformed
                   </span>
                 </div>
               </div>
@@ -103,44 +125,44 @@ export default function Index() {
             <div className="footer-divider change2 change3"></div>
             <div className="flex items-center justify-center" style={{gap: '55px'}}>
               <div className="flex items-center gap-3">
-                <img src="/Instant Access.png" alt="Instant Access" style={{width: '24px', height: 'auto'}} />
+                <img src="/Instant Access.png" alt="Custom Viral Strategy" style={{width: '24px', height: 'auto'}} />
                 <span style={{
                   fontFamily: 'Montserrat, sans-serif',
                   fontWeight: 'bold',
                   color: '#fff',
                   fontSize: '14px',
                   lineHeight: '20px'
-                }}>INSTANT ACCESS</span>
+                }}>CUSTOM VIRAL STRATEGY</span>
               </div>
               <div className="flex items-center gap-3">
-                <img src="/Forex Eaducation.png" alt="Forex Education" style={{width: '30px', height: 'auto'}} />
+                <img src="/Forex Eaducation.png" alt="Organic Growth" style={{width: '30px', height: 'auto'}} />
                 <span style={{
                   fontFamily: 'Montserrat, sans-serif',
                   fontWeight: 'bold',
                   color: '#fff',
                   fontSize: '14px',
                   lineHeight: '20px'
-                }}>FOREX EDUCATION</span>
+                }}>ORGANIC GROWTH</span>
               </div>
               <div className="flex items-center gap-3">
-                <img src="/Community.png" alt="Community" style={{width: '30px', height: 'auto'}} />
+                <img src="/Community.png" alt="Expert Team Access" style={{width: '30px', height: 'auto'}} />
                 <span style={{
                   fontFamily: 'Montserrat, sans-serif',
                   fontWeight: 'bold',
                   color: '#fff',
                   fontSize: '14px',
                   lineHeight: '20px'
-                }}>COMMUNITY</span>
+                }}>EXPERT TEAM ACCESS</span>
               </div>
               <div className="flex items-center gap-3">
-                <img src="/Secure Payment.png" alt="Secure Payment" style={{width: '21px', height: 'auto'}} />
+                <img src="/Secure Payment.png" alt="Revenue Conversion" style={{width: '21px', height: 'auto'}} />
                 <span style={{
                   fontFamily: 'Montserrat, sans-serif',
                   fontWeight: 'bold',
                   color: '#fff',
                   fontSize: '14px',
                   lineHeight: '20px'
-                }}>SECURE PAYMENT</span>
+                }}>REVENUE CONVERSION</span>
               </div>
             </div>
             <div className="footer-divider change2 change3"></div>
@@ -174,36 +196,25 @@ export default function Index() {
             fontStyle: 'italic',
             marginBottom: '65px'
           }}>
-            <strong>Yarimi University Presents...</strong>
+            <strong>BrandTok Presents...</strong>
           </h1>
           
           {/* Video Container */}
           <div className="relative" style={{
             maxWidth: '920px',
-            margin: '0 auto 32px auto'
+            margin: '0 auto 32px auto',
+            borderRadius: '13px',
+            overflow: 'hidden'
           }}>
-            {/* Wistia Video Embed - Using iframe method */}
-            <div style={{
-              position: 'relative',
-              paddingBottom: '56.25%',
-              height: 0,
-              overflow: 'hidden'
-            }}>
-              <iframe 
-                src="https://fast.wistia.net/embed/iframe/xhd7zekxtp?videoFoam=true" 
-                title="Yarimi University Video"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  border: 'none',
-                  borderRadius: '14px'
-                }}
-              />
+            {/* Wistia Video Embed - Using useEffect for proper React integration */}
+            <div className="wistia_responsive_padding" style={{padding: '56.25% 0 0 0', position: 'relative'}}>
+              <div className="wistia_responsive_wrapper" style={{height: '100%', left: 0, position: 'absolute', top: 0, width: '100%'}}>
+                <div className="wistia_embed wistia_async_ct3jnmk4vx seo=false videoFoam=true" style={{height: '100%', position: 'relative', width: '100%'}}>
+                  <div className="wistia_swatch" style={{height: '100%', left: 0, opacity: 0, overflow: 'hidden', position: 'absolute', top: 0, transition: 'opacity 200ms', width: '100%'}}>
+                    <img src="https://fast.wistia.com/embed/medias/ct3jnmk4vx/swatch" style={{filter: 'blur(5px)', height: '100%', objectFit: 'contain', width: '100%'}} alt="" aria-hidden="true" onLoad={(e) => (e.target as HTMLImageElement).parentElement!.style.opacity = '1'} />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
             
@@ -219,7 +230,7 @@ export default function Index() {
               marginBottom: '50px',
               textAlign: 'center'
             }}>
-              <strong>Limited Time Offer: £99 One Time</strong>
+              <strong>Stop Burning Cash On Ads That Don't Work</strong>
             </h2>
             
             {/* Enroll button */}
@@ -244,14 +255,14 @@ export default function Index() {
               onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1.1)'}
               onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1)'}
             >
-              Enroll Now
+              Get Your Free Strategy Call
             </a>
             
-            {/* Traders enrolled */}
+            {/* Businesses transformed */}
             <div className="flex items-center justify-center gap-2">
               <img 
                 src="/Traders Enrolled.png" 
-                alt="Traders Enrolled" 
+                alt="Businesses Transformed" 
                 style={{width: '74px', height: 'auto'}}
               />
               <div className="flex items-center gap-1">
@@ -262,7 +273,7 @@ export default function Index() {
                   color: '#000',
                   lineHeight: '20px'
                 }}>
-                  12,173+
+                  1000+
                 </span>
                 <span style={{
                   fontFamily: 'Montserrat, sans-serif',
@@ -271,7 +282,7 @@ export default function Index() {
                   color: '#030a17',
                   lineHeight: '20px'
                 }}>
-                  Traders Enrolled
+                  Businesses Transformed
                 </span>
               </div>
             </div>
@@ -279,7 +290,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Third Section - What is Yarimi University */}
+      {/* Third Section - What is BrandTok */}
       <section className="w-full" style={{ padding: '65px 24px 60px', backgroundColor: '#030a17' }}>
         <div className="mx-auto text-center" style={{ maxWidth: '920px' }}>
           {/* Pre-heading */}
@@ -320,7 +331,7 @@ export default function Index() {
               width: '100%'
             }}
           >
-            What is Yarimi University ?
+            What Is BrandTok?
           </h2>
           
           {/* Body Text */}
@@ -336,7 +347,7 @@ export default function Index() {
                 lineHeight: '24px'
               }}
             >
-              Yarimi University is a forex educational program made by traders, for traders.
+              BrandTok is a viral content creation powerhouse. We're not a typical marketing agency. We're a partner for scaling business builders who are tired of burning cash on ads that don't work.
             </p>
             
             <p 
@@ -350,7 +361,7 @@ export default function Index() {
                 lineHeight: '24px'
               }}
             >
-              It consists of step-by-step training covering EVERY aspect of getting started with forex trading, successful strategies, and how to actually become profitable. You'll be taken from knowing nothing..."zero" to everything..."hero".
+              We understand your pain. You've tried Facebook ads. You've tried Google ads. You've probably tried other marketing companies too. And it didn't work to the level you wanted. You were burning your hard-earned cash with no ROI.
             </p>
             
             <p 
@@ -364,7 +375,7 @@ export default function Index() {
                 lineHeight: '24px'
               }}
             >
-              Yarimi University has everything covered for you. We even have complementary bonuses, such as FREE quarterly live events where you can meet Yarimi in person, gifted-funded accounts to top performing students, and much much more!
+              Times are changing. There's a new way to get customers — through organic viral content. We've built a system that delivers predictable, organic growth through strategic content creation on TikTok and Instagram. Our clients consistently see 20-30% revenue increases, fresh customer acquisition, and unprecedented reach. All without paid ads. We do all the heavy lifting for you.
             </p>
           </div>
           
