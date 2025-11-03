@@ -12,6 +12,7 @@ import Pricing from "@/components/Pricing";
 import StudentsWins from "@/components/StudentsWins";
 import SuccessStories from "@/components/SuccessStories";
 import FAQ from "@/components/FAQ";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer.tsx";
 import { useEffect } from "react";
 
@@ -37,7 +38,7 @@ export default function Index() {
   }, []);
 
   return (
-    <div className="bg-[radial-gradient(80%_60%_at_50%_0%,rgba(37,99,235,0.18),transparent),radial-gradient(40%_30%_at_80%_10%,rgba(6,182,212,0.18),transparent)]">
+    <div className="bg-[radial-gradient(80%_60%_at_50%_0%,rgba(255,0,0,0.18),transparent),radial-gradient(40%_30%_at_80%_10%,rgba(255,51,51,0.18),transparent)]">
       {/* HERO */}
       <section className="hero-glow border-b border-white/5 relative" style={{backgroundColor: '#030a17'}}>
         <div className="blur-shape"></div>
@@ -46,9 +47,9 @@ export default function Index() {
           <div className="grid items-center hero-grid" style={{gridTemplateColumns: '58% 42%', gap: '0rem'}}>
             {/* Hero Content */}
             <div className="hero-content text-left" style={{position: 'relative', zIndex: 10}}>
-              <div className="hero-badge mx-0 inline-flex items-center gap-2 rounded-full px-6 py-2 overflow-hidden relative bg-[#00408C] max-w-[280px]" style={{border: '1px solid #70b1ff'}}>
-                <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#00408C] to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#00408C] to-transparent z-10 pointer-events-none"></div>
+              <div className="hero-badge mx-0 inline-flex items-center gap-2 rounded-full px-6 py-2 overflow-hidden relative bg-[#8B0000] max-w-[280px]" style={{border: '1px solid #FF3333'}}>
+                <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#8B0000] to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#8B0000] to-transparent z-10 pointer-events-none"></div>
                 <div className="animate-marquee-continuous whitespace-nowrap flex" style={{color: '#fff', fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontWeight: 400, fontSize: '12px', lineHeight: '20px'}}>
                   <span>ORGANIC GROWTH - VIRAL RESULTS - REVENUE SYSTEM -CONTENT POWERHOUSE</span>
                 </div>
@@ -64,7 +65,7 @@ export default function Index() {
                   href="#pricing"
                   className="hero-cta-button"
                   style={{
-                    backgroundImage: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                    backgroundImage: 'linear-gradient(80deg, #FF3333, #FF0000)',
                     borderRadius: '5px',
                     marginBottom: '0',
                     padding: '14px 70px',
@@ -238,7 +239,7 @@ export default function Index() {
               href="#pricing"
               className="video-training-button"
               style={{
-                backgroundImage: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                backgroundImage: 'linear-gradient(80deg, rgb(198 2 2), #ff0000)',
                 borderRadius: '5px',
                 padding: '14px 50px',
                 fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
@@ -291,13 +292,13 @@ export default function Index() {
       </section>
 
       {/* Third Section - What is BrandTok */}
-      <section className="w-full" style={{ padding: '65px 24px 60px', backgroundColor: '#030a17' }}>
+      <section id="about" className="w-full" style={{ padding: '65px 24px 60px', backgroundColor: '#030a17' }}>
         <div className="mx-auto text-center" style={{ maxWidth: '920px' }}>
           {/* Pre-heading */}
           <p 
             className="font-montserrat uppercase"
             style={{
-              backgroundImage: 'linear-gradient(80deg, var(--blue), var(--light-blue))',
+              backgroundImage: 'linear-gradient(80deg, #FF0000, #FF3333)',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -408,6 +409,9 @@ export default function Index() {
 
       {/* FAQ */}
       <FAQ />
+
+      {/* CTA SECTION */}
+      <CTA />
 
       {/* FOOTER */}
       <Footer />

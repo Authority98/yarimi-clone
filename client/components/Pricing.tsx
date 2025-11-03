@@ -51,11 +51,11 @@ export default function Pricing() {
                 width: '20px',
                 height: '20px',
                 borderRadius: '50%',
-                background: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                background: 'linear-gradient(80deg, rgb(198 2 2), #ff0000)',
                 textAlign: 'center',
                 lineHeight: '20px',
                 marginRight: '10px',
-                boxShadow: '0 0 8px #0074ff',
+                boxShadow: '0 0 8px #FF0000',
                 color: 'white'
               }}>✓</span>
               Custom Viral Strategy & Platform Audit
@@ -75,11 +75,11 @@ export default function Pricing() {
                 width: '20px',
                 height: '20px',
                 borderRadius: '50%',
-                background: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                background: 'linear-gradient(80deg, rgb(198 2 2), #ff0000)',
                 textAlign: 'center',
                 lineHeight: '20px',
                 marginRight: '10px',
-                boxShadow: '0 0 8px #0074ff',
+                boxShadow: '0 0 8px #FF0000',
                 color: 'white'
               }}>✓</span>
               Professional Content Creation & Production
@@ -99,11 +99,11 @@ export default function Pricing() {
                 width: '20px',
                 height: '20px',
                 borderRadius: '50%',
-                background: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                background: 'linear-gradient(80deg, rgb(198 2 2), #ff0000)',
                 textAlign: 'center',
                 lineHeight: '20px',
                 marginRight: '10px',
-                boxShadow: '0 0 8px #0074ff',
+                boxShadow: '0 0 8px #FF0000',
                 color: 'white'
               }}>✓</span>
               Multi-Platform Strategic Distribution
@@ -123,11 +123,11 @@ export default function Pricing() {
                 width: '20px',
                 height: '20px',
                 borderRadius: '50%',
-                background: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                background: 'linear-gradient(80deg, rgb(198 2 2), #ff0000)',
                 textAlign: 'center',
                 lineHeight: '20px',
                 marginRight: '10px',
-                boxShadow: '0 0 8px #0074ff',
+                boxShadow: '0 0 8px #FF0000',
                 color: 'white'
               }}>✓</span>
               Monthly Performance Analytics & Reporting
@@ -147,11 +147,11 @@ export default function Pricing() {
                 width: '20px',
                 height: '20px',
                 borderRadius: '50%',
-                background: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                background: 'linear-gradient(80deg, rgb(198 2 2), #ff0000)',
                 textAlign: 'center',
                 lineHeight: '20px',
                 marginRight: '10px',
-                boxShadow: '0 0 8px #0074ff',
+                boxShadow: '0 0 8px #FF0000',
                 color: 'white'
               }}>✓</span>
               Direct Access to Creative Team
@@ -171,11 +171,11 @@ export default function Pricing() {
                 width: '20px',
                 height: '20px',
                 borderRadius: '50%',
-                background: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                background: 'linear-gradient(80deg, rgb(198 2 2), #ff0000)',
                 textAlign: 'center',
                 lineHeight: '20px',
                 marginRight: '10px',
-                boxShadow: '0 0 8px #0074ff',
+                boxShadow: '0 0 8px #FF0000',
                 color: 'white'
               }}>✓</span>
               Conversion & Revenue Optimization
@@ -195,11 +195,11 @@ export default function Pricing() {
                 width: '20px',
                 height: '20px',
                 borderRadius: '50%',
-                background: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+                background: 'linear-gradient(80deg, rgb(198 2 2), #ff0000)',
                 textAlign: 'center',
                 lineHeight: '20px',
                 marginRight: '10px',
-                boxShadow: '0 0 8px #0074ff',
+                boxShadow: '0 0 8px #FF0000',
                 color: 'white'
               }}>✓</span>
               Real Customers. Real Results. Real ROI.

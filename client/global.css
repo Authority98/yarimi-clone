@@ -31,7 +31,7 @@
     --popover: 222 45% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 216 100% 56%;
+    --primary: 0 100% 50%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 218 36% 14%;
@@ -48,21 +48,21 @@
 
     --border: 220 28% 18%;
     --input: 220 28% 18%;
-    --ring: 216 100% 60%;
+    --ring: 0 100% 50%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 222 60% 6%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 216 100% 56%;
+    --sidebar-primary: 0 100% 50%;
     --sidebar-primary-foreground: 210 40% 98%;
     --sidebar-accent: 221 45% 16%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 220 28% 18%;
-    --sidebar-ring: 216 100% 60%;
+    --sidebar-ring: 0 100% 50%;
     
-    --blue: #0074ff;
-    --light-blue: #70b1ff;
+    --blue: #FF0000;
+    --light-blue: #FF3333;
     --black: #000000;
     --dark-blue: #134181;
     --w-i-box-bg-top: rgba(255, 255, 255, 0.05);
@@ -80,7 +80,7 @@
     --popover: 222 45% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 216 100% 56%;
+    --primary: 0 100% 50%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 218 36% 14%;
@@ -97,7 +97,7 @@
 
     --border: 220 28% 18%;
     --input: 220 28% 18%;
-    --ring: 216 100% 60%;
+    --ring: 0 100% 50%;
     --sidebar-background: 222 60% 6%;
     --sidebar-foreground: 210 40% 98%;
     --sidebar-primary: 216 100% 56%;
@@ -105,7 +105,7 @@
     --sidebar-accent: 221 45% 16%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 220 28% 18%;
-    --sidebar-ring: 216 100% 60%;
+    --sidebar-ring: 0 100% 50%;
   }
 }
 
@@ -133,7 +133,7 @@
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(90deg, hsl(var(--primary)) 0%, #67e8f9 100%);
+    background: linear-gradient(90deg, var(--blue) 0%, #FF3333 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -145,9 +145,9 @@
     content: "";
     position: absolute;
     inset: -40% -20% -10% -20%;
-    background: radial-gradient(60% 50% at 50% 0%, rgba(56, 189, 248, 0.25), transparent 70%),
-      radial-gradient(40% 30% at 20% 20%, rgba(59, 130, 246, 0.15), transparent 70%),
-      radial-gradient(40% 30% at 80% 20%, rgba(99, 102, 241, 0.15), transparent 70%);
+    background: radial-gradient(60% 50% at 50% 0%, rgba(255, 0, 0, 0.25), transparent 70%),
+      radial-gradient(40% 30% at 20% 20%, rgba(255, 51, 51, 0.15), transparent 70%),
+      radial-gradient(40% 30% at 80% 20%, rgba(255, 102, 102, 0.15), transparent 70%);
     filter: blur(60px);
     z-index: -1;
   }
@@ -328,7 +328,7 @@
   .blur-shape {
     z-index: 5;
     filter: blur(400px);
-    background-color: #0074ff;
+    background-color: #FF0000;
     width: 1000px;
     max-width: 100%;
     height: 250px;
@@ -358,7 +358,7 @@
   
   .footer-divider.change2 {
     background-color: #0000;
-    background-image: linear-gradient(80deg, #0771df00, #0771df 32% 68%, #0771df00 95%);
+    background-image: linear-gradient(80deg, #ff000000, #FF0000 32% 68%, #ff000000 95%);
     height: 2px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -458,15 +458,15 @@
   
   .timeline_progress-bar-2 {
     z-index: -2;
-    background-color: #0074ff;
-    background-image: linear-gradient(180deg, #70b1ff, #0074ff);
+    background-color: #FF0000;
+    background-image: linear-gradient(180deg, rgb(198 2 2), #ff0000);
     width: 2px;
     height: 0%;
     position: absolute;
     left: 50%;
     top: 0;
     transform: translateX(-50%);
-    box-shadow: 0 0 8px #0074ff, 0 0 16px #0074ff40;
+    box-shadow: 0 0 8px #FF0000, 0 0 16px #FF000040;
     transition: height 0.12s ease-out;
   }
   
@@ -568,13 +568,13 @@
   }
   
   .margin-bottom-xlarge {
-    border: 1px solid #70b1ff;
-    background-image: linear-gradient(135deg, #0014c880, #00084d80 50%, #000f9980), linear-gradient(to bottom, #030a17, #030a17);
+    border: 1px solid #FF0000;
+    background-image: linear-gradient(135deg, #c8000042, #4d000080 50%, #c8000042), linear-gradient(to bottom, #030a17, #030a17);
     text-align: left;
     border-radius: 7px;
     margin-bottom: 0;
     padding: 30px;
-    box-shadow: 0 2px 40px #0019ff66;
+    box-shadow: 0 2px 40px #ff000066;
     max-width: 500px;
   }
   
@@ -732,7 +732,7 @@
   
   .curriculum-blur-effect {
     filter: blur(300px);
-    background-color: #0113b780;
+    background-color: #b7010180;
     width: 250px;
     height: 816px;
     position: absolute;
@@ -752,10 +752,10 @@
   .container.change1.change2 {
     grid-column-gap: 16px;
     grid-row-gap: 16px;
-    border: 2px solid #70b1ff;
+    border: 2px solid #FF0000;
     box-shadow: none;
     color: #fff;
-    background-image: linear-gradient(#001d40, #001126);
+    background-image: linear-gradient(#40000000, #260000ab);
     border-radius: 12px;
     flex-flow: row;
     justify-items: stretch;
@@ -768,7 +768,7 @@
   }
   
   .container.change1.change2:hover {
-    box-shadow: 0 8px 30px rgba(0, 116, 255, 0.3);
+    box-shadow: 0 8px 30px rgb(255 0 0 / 30%);
   }
   
   .div-block-21 {
@@ -778,11 +778,11 @@
   }
   
   .image-18 {
-    border: 1px solid #70b1ff;
+    border: 1px solid #ff0000;
     border-radius: 7px;
     height: auto;
     margin-left: 50px;
-    box-shadow: 0 0 16px #0074ff40;
+    box-shadow: 0 0 16px #ff000040;
     width: 344px;
     max-width: 100%;
   }
@@ -851,9 +851,9 @@
   }
   
   .button-4 {
-    border: 1px solid #70b1ff;
+    border: 1px solid #FF0000;
     background-color: #3898ec00;
-    background-image: linear-gradient(80deg, #0467f54d, #12c6e21a);
+    background-image: linear-gradient(80deg, rgb(198 2 2), #ff0000);
     border-radius: 56px;
     color: rgb(255, 255, 255);
     font-family: 'Montserrat', sans-serif;
@@ -867,7 +867,7 @@
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-block;
-    box-shadow: 0 0 20px 5px #0074ff80;
+    box-shadow: 0 0 20px 5px #ff000080;
   }
   
   .button-4:hover {
@@ -952,7 +952,7 @@
   
   .div-block-28 {
     filter: blur(250px);
-    background-color: #0113b780;
+    background-color: #b7010180;
     width: 380px;
     height: 380px;
     position: absolute;
@@ -968,13 +968,9 @@
   }
   
   .text-block-17 {
-    background-color: #0000;
-    background-image: linear-gradient(80deg, #0074ff, #70b1ff);
+    color: #FF0000;
     text-align: center;
     text-transform: uppercase;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
     font-family: 'Montserrat-Bold', Montserrat, sans-serif;
     font-size: 16px;
     font-weight: 600;
@@ -1014,9 +1010,8 @@
   .div-block-5 {
     grid-column-gap: 32px;
     grid-row-gap: 32px;
-    border: 1px solid #70b1ff;
-    background-color: #070c34;
-    background-image: linear-gradient(#071633, #071633), linear-gradient(80deg, #0074ff12, #0074ff00 50%, #0074ff12), radial-gradient(circle farthest-side, #030a18, #fff0);
+    border: 1px solid #ff0000;
+    background-color: #1D1D1D;
     border-radius: 16px;
     flex-flow: column;
     order: 0;
@@ -1029,7 +1024,7 @@
     margin: 60px auto 40px auto;
     padding: 60px 20px 40px 20px;
     display: flex;
-    box-shadow: 0 0 60px #0074ff40;
+    box-shadow: 0 0 60px #ff000063;
   }
   
   .heading-18 {
@@ -1079,7 +1074,7 @@
     order: -1;
     margin-top: 16px;
     padding: 12px 60px;
-    background-image: linear-gradient(80deg, #70b1ff, #0074ff);
+    background-image: linear-gradient(80deg, rgb(198 2 2), #ff0000);
     border: none;
     border-radius: 5px;
     color: white;
@@ -1335,11 +1330,34 @@
   width: 100%;
   position: relative;
   margin-bottom: 20px;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  height: 0;
+  /* Removed padding-top since Wistia videos handle their own aspect ratio */
+  height: auto;
   border: 1px solid #fff;
   border-radius: 4px;
   overflow: hidden;
+  z-index: 1;
+}
+
+/* Wistia video container fixes */
+.wistia_responsive_padding {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.wistia_responsive_wrapper {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.wistia_embed {
+  width: 100% !important;
+  height: auto !important;
+}
+
+wistia-player {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
 }
 
 .testimonial-content {
@@ -1470,16 +1488,17 @@
 }
 
 .div-block-12 {
-  border: 1px solid #0074ff;
+  border: 1px solid #FF0000;
   background-color: transparent;
-  background-image: linear-gradient(80deg, #001e43, #030a17 51%);
+  background-image: linear-gradient(80deg, #430000, #170303 51%);
+  -o-object-fit: fill;
   object-fit: fill;
   border-radius: 12px;
   width: auto;
   height: auto;
   position: absolute;
   inset: 1px;
-  box-shadow: 0 0 20px 2px rgba(0, 25, 255, 0.4), inset 0 0 45px 5px rgba(23, 4, 99, 0.56);
+  box-shadow: 0 0 20px 2px rgb(255 0 0 / 40%), inset 0 0 45px 5px #ff000000;
 }
 
 .accordionheader {
@@ -1582,7 +1601,7 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
-  color: #fff;
+  color: #FF0000;
   text-align: left;
 }
 

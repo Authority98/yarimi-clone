@@ -134,7 +134,7 @@ export default function Timeline() {
           </h2>
           <p 
             style={{
-              backgroundImage: 'linear-gradient(80deg, var(--blue), var(--light-blue))',
+              backgroundImage: 'linear-gradient(80deg, #FF0000, #FF3333)',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -185,7 +185,7 @@ export default function Timeline() {
                         fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
                         fontSize: '14px',
                         fontWeight: 'bold',
-                        color: '#70b1ff',
+                        color: '#FFFFFF',
                         marginBottom: '8px',
                         textTransform: 'uppercase',
                         letterSpacing: '1px'
@@ -201,12 +201,12 @@ export default function Timeline() {
                           <span 
                             key={tagIndex}
                             style={{
-                              backgroundColor: 'rgba(112, 177, 255, 0.1)',
-                              border: '1px solid #70b1ff',
+                              backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                              border: '1px solid #FF0000',
                               borderRadius: '20px',
                               padding: '4px 12px',
                               fontSize: '12px',
-                              color: '#70b1ff',
+                              color: '#FFFFFF',
                               fontFamily: 'Montserrat, sans-serif'
                             }}
                           >
@@ -236,7 +236,7 @@ export default function Timeline() {
                         fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
                         fontSize: '14px',
                         fontWeight: 'bold',
-                        color: '#70b1ff',
+                        color: '#FFFFFF',
                         marginBottom: '8px',
                         textTransform: 'uppercase',
                         letterSpacing: '1px'
@@ -252,12 +252,12 @@ export default function Timeline() {
                           <span 
                             key={tagIndex}
                             style={{
-                              backgroundColor: 'rgba(112, 177, 255, 0.1)',
-                              border: '1px solid #70b1ff',
+                              backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                              border: '1px solid #FF0000',
                               borderRadius: '20px',
                               padding: '4px 12px',
                               fontSize: '12px',
-                              color: '#70b1ff',
+                              color: '#FFFFFF',
                               fontFamily: 'Montserrat, sans-serif'
                             }}
                           >
@@ -283,7 +283,7 @@ export default function Timeline() {
           <a 
             href="#pricing"
             style={{
-              backgroundImage: 'linear-gradient(80deg, #70b1ff, #0074ff)',
+              backgroundImage: 'linear-gradient(80deg, rgb(198 2 2), #ff0000)',
               borderRadius: '5px',
               padding: '14px 70px',
               fontFamily: 'Inter, sans-serif',
@@ -297,7 +297,7 @@ export default function Timeline() {
               boxShadow: '0 0 12px #00000040'
             }}
           >
-            Enroll Now
+            Get Started
           </a>
         </div>
       </div>

@@ -9,24 +9,24 @@ const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      question: "What Is Yarimi University",
-      answer: "Yarimi University is an online educational program that teaches forex/currency trading. Made by traders for traders. We offer A-Z detailed forex education, community, and special events."
+      question: "What kind of businesses do you work with?",
+      answer: "We partner with scaling business builders who are tired of burning cash on ads that don't work. Our system is perfect for restaurants, e-commerce brands, local businesses, and service providers who want a predictable system for acquiring new customers organically through platforms like TikTok and Instagram."
     },
     {
-      question: "How Long Will I Have Access To Yarimi University",
-      answer: "You'll have lifetime access to Yarimi University, all the video modules, resources, events, etc."
+      question: "How long does it take to see results?",
+      answer: "While some content can gain traction very quickly, our system is about building a sustainable asset, not just chasing one-hit wonders. Many of our clients start seeing a consistent flow of new customers and significant revenue increases (20-30%) within 2-3 months of launching the system."
     },
     {
-      question: "I Don't Have Any Experience Or Results. Is This For Me?",
-      answer: "Not a problem at all. We have students joining Yarimi University as complete beginners with no previous knowledge or experience.\n\nWe provide you with all the information you need to succeed with forex trading, whether you're starting off today or if you already have some knowledge about the forex trading space."
+      question: "Do I have to film the content myself?",
+      answer: "No. \"We do all the heavy lifting\" is our promise to you. Our award-winning creative team handles the entire process, including strategy, platform audits, scripting, professional filming, and editing. We work with you to capture your brand's voice, but you can be completely hands-off."
     },
     {
-      question: "What If I Have Questions Or Get Stuck Throughout The Program?",
-      answer: "No problem. We have 24/7 support. Discord moderators inside the community. Weekly calls on Sunday where every question asked gets answered.\n\nIf you need any specific questions answered, email yarimi@yarimiuniversity.com"
+      question: "What makes this different from a regular marketing agency?",
+      answer: "Most agencies focus on running paid ads, which means you're constantly spending money to get in front of people. We are a viral content powerhouse. We build a system that gets you organic reach, meaning you get views and new customers without paying for ads. We focus on turning views into measurable revenue and ROI, not just vanity metrics."
     },
     {
-      question: "Is There A Guarantee?",
-      answer: "No. We don't offer any guarantees. Simply because we can't guarantee any results. But we do offer the guidance and information for you to go from an absolute beginner to a funded trader."
+      question: "How much does the \"Full Service Viral Partnership\" cost?",
+      answer: "Because every business is different, we don't offer one-size-fits-all pricing. Our partnership is custom-tailored to your specific niche, goals, and content needs. The best way to get a clear quote is to schedule a free, no-obligation strategy call so we can build a custom viral strategy for your business."
     }
   ];
 

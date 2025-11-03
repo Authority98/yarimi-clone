@@ -4,8 +4,8 @@ export default function SiteFooter() {
       <div className="container py-10 grid gap-6 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="Yarimi University Logo" className="size-8" />
-            <span className="text-lg font-semibold tracking-tight">Yarimi University</span>
+            <img src="/logo.png" alt="BrandTok Logo" className="size-8" />
+            <span className="text-lg font-semibold tracking-tight">BrandTok</span>
           </div>
           <p className="mt-4 text-sm text-muted-foreground max-w-sm">Learn forex trading with a clear roadmap, hands-on guidance, and a supportive community.
           </p>
@@ -27,7 +27,7 @@ export default function SiteFooter() {
       </div>
       <div className="border-t border-white/5">
         <div className="container py-6 text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Yarimi University. All rights reserved.
+          © {new Date().getFullYear()} BrandTok. All rights reserved.
         </div>
       </div>
     </footer>
