@@ -130,7 +130,7 @@ export default function Timeline() {
               fontFamily: 'Montserrat-Bold, Montserrat, sans-serif'
             }}
           >
-            What's Included
+            How Our Personal Branding Funnel Works
           </h2>
           <p 
             style={{

@@ -171,6 +171,7 @@
     .hero-image {
       order: 1;
       justify-content: center !important;
+      padding-left: 0 !important; /* Remove left padding on mobile */
     }
     
     .hero-image img {
@@ -291,12 +292,26 @@
   .hero-grid {
     width: 100%;
     max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  
+  /* Remove padding on mobile */
+  @media (max-width: 768px) {
+    .hero-grid {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   
   .hero-content,
   .hero-image {
     width: 100%;
     max-width: 100%;
+  }
+  
+  .hero-image {
+    padding-left: 130px; /* Add left padding on desktop */
   }
   
   .animate-marquee {

@@ -15,6 +15,14 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer.tsx";
 import { useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function Index() {
   useEffect(() => {
@@ -27,13 +35,26 @@ export default function Index() {
     script2.src = 'https://fast.wistia.com/assets/external/E-v1.js';
     script2.async = true;
     
+    // Script for the new hero video
+    const script3 = document.createElement('script');
+    script3.src = 'https://fast.wistia.com/embed/medias/vfvunjpwvs.jsonp';
+    script3.async = true;
+    
+    const script4 = document.createElement('script');
+    script4.src = 'https://fast.wistia.com/player.js';
+    script4.async = true;
+    
     document.body.appendChild(script1);
     document.body.appendChild(script2);
+    document.body.appendChild(script3);
+    document.body.appendChild(script4);
     
     return () => {
       // Clean up scripts when component unmounts
       document.body.removeChild(script1);
       document.body.removeChild(script2);
+      document.body.removeChild(script3);
+      document.body.removeChild(script4);
     };
   }, []);
 
@@ -43,8 +64,8 @@ export default function Index() {
       <section className="hero-glow border-b border-white/5 relative" style={{backgroundColor: '#030a17'}}>
         <div className="blur-shape"></div>
         <div className="hero-background"></div>
-        <div className="container" style={{paddingLeft: '24px', paddingRight: '24px', paddingTop: '86px', paddingBottom: '72px'}}>
-          <div className="grid items-center hero-grid" style={{gridTemplateColumns: '58% 42%', gap: '0rem'}}>
+        <div className="container" style={{paddingLeft: '0', paddingRight: '0', paddingTop: '86px', paddingBottom: '72px', maxWidth: '1400px', margin: '0 auto'}}>
+          <div className="grid items-center hero-grid" style={{gridTemplateColumns: '58% 42%', gap: '0rem', paddingLeft: '24px', paddingRight: '24px'}}>
             {/* Hero Content */}
             <div className="hero-content text-left" style={{position: 'relative', zIndex: 10}}>
               <div className="hero-badge mx-0 inline-flex items-center gap-2 rounded-full px-6 py-2 overflow-hidden relative bg-[#8B0000] max-w-[280px]" style={{border: '1px solid #FF3333'}}>
@@ -110,69 +131,85 @@ export default function Index() {
                 </div>
               </div>
             </div>
-            {/* Hero Image */}
+            {/* Hero Video */}
             <div className="hero-image relative flex justify-end" style={{position: 'relative', zIndex: 10}}>
-              <img
-                src="/hero-image.png"
-                alt="Forex Trading Hero"
-                style={{width: '550px', height: 'auto'}}
-                className="rounded-2xl"
-              />
+              {/* Wistia Video Embed */}
+              <div className="wistia_responsive_padding" style={{padding: '56.25% 0 0 0', position: 'relative', width: '550px'}}>
+                <div className="wistia_responsive_wrapper" style={{height: '100%', left: 0, position: 'absolute', top: 0, width: '100%'}}>
+                  <div className="wistia_embed wistia_async_vfvunjpwvs seo=false videoFoam=true" style={{height: '100%', position: 'relative', width: '100%'}}>
+                    <div className="wistia_swatch" style={{height: '100%', left: 0, opacity: 0, overflow: 'hidden', position: 'absolute', top: 0, transition: 'opacity 200ms', width: '100%'}}>
+                      <img src="https://fast.wistia.com/embed/medias/vfvunjpwvs/swatch" style={{filter: 'blur(5px)', height: '100%', objectFit: 'contain', width: '100%'}} alt="" aria-hidden="true" onLoad={(e) => (e.target as HTMLImageElement).parentElement!.style.opacity = '1'} />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           
-          {/* FEATURES ROW */}
+          {/* Brand Logos Section - Replaces the previous icon/text elements */}
           <div className="mt-20" style={{position: 'relative', zIndex: 10, marginTop: '85px'}}>
             <div className="footer-divider change2 change3"></div>
-            <div className="flex items-center justify-center" style={{gap: '55px'}}>
-              <div className="flex items-center gap-3">
-                <img src="/Instant Access.png" alt="Custom Viral Strategy" style={{width: '24px', height: 'auto'}} />
-                <span style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 'bold',
-                  color: '#fff',
-                  fontSize: '14px',
-                  lineHeight: '20px'
-                }}>CUSTOM VIRAL STRATEGY</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <img src="/Forex Eaducation.png" alt="Organic Growth" style={{width: '30px', height: 'auto'}} />
-                <span style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 'bold',
-                  color: '#fff',
-                  fontSize: '14px',
-                  lineHeight: '20px'
-                }}>ORGANIC GROWTH</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <img src="/Community.png" alt="Expert Team Access" style={{width: '30px', height: 'auto'}} />
-                <span style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 'bold',
-                  color: '#fff',
-                  fontSize: '14px',
-                  lineHeight: '20px'
-                }}>EXPERT TEAM ACCESS</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <img src="/Secure Payment.png" alt="Revenue Conversion" style={{width: '21px', height: 'auto'}} />
-                <span style={{
-                  fontFamily: 'Montserrat, sans-serif',
-                  fontWeight: 'bold',
-                  color: '#fff',
-                  fontSize: '14px',
-                  lineHeight: '20px'
-                }}>REVENUE CONVERSION</span>
+            
+            {/* Brand Logos Section - Static on desktop */}
+            <div className="hidden md:block">
+              <div className="flex justify-center items-center space-x-16">
+                <img src="/samsung logo.webp" alt="Samsung" className="w-28 h-16 object-contain" />
+                <img src="/grab%20logo.svg" alt="Grab" className="w-28 h-16 object-contain" />
+                <img src="/kitchenAid.webp" alt="KitchenAid" className="w-28 h-16 object-contain bg-white p-1 rounded" />
+                <img src="/le%20creuset%20logo.png" alt="Le Creuset" className="w-28 h-16 object-contain" style={{ height: '68px' }} />
               </div>
             </div>
+            
+            {/* Brand Logos Section - Carousel on mobile */}
+            <div className="md:hidden">
+              <div className="flex justify-center items-center">
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  plugins={[
+                    Autoplay({
+                      delay: 2000,
+                      stopOnInteraction: false,
+                      stopOnMouseEnter: true,
+                    }),
+                  ]}
+                  className="w-full max-w-xs"
+                >
+                  <CarouselContent className="-ml-1">
+                    <CarouselItem className="pl-1 basis-1/2">
+                      <div className="p-1 flex justify-center">
+                        <img src="/samsung logo.webp" alt="Samsung" className="w-24 h-12 object-contain" />
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="pl-1 basis-1/2">
+                      <div className="p-1 flex justify-center">
+                        <img src="/grab%20logo.svg" alt="Grab" className="w-24 h-12 object-contain" />
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="pl-1 basis-1/2">
+                      <div className="p-1 flex justify-center">
+                        <img src="/kitchenAid.webp" alt="KitchenAid" className="w-24 h-12 object-contain bg-white p-1 rounded" />
+                      </div>
+                    </CarouselItem>
+                    <CarouselItem className="pl-1 basis-1/2">
+                      <div className="p-1 flex justify-center">
+                        <img src="/le%20creuset%20logo.png" alt="Le Creuset" className="w-24 h-12 object-contain" style={{ height: '48px' }} />
+                      </div>
+                    </CarouselItem>
+                  </CarouselContent>
+                </Carousel>
+              </div>
+            </div>
+            
             <div className="footer-divider change2 change3"></div>
           </div>
         </div>
       </section>
 
       {/* VIDEO TRAINING SECTION */}
-      <section id="training" className="video-training-section relative" style={{backgroundColor: '#030a17', paddingLeft: '76px', paddingRight: '76px', paddingTop: '0px', paddingBottom: '72px'}}>
+      <section id="training" className="video-training-section relative hidden" style={{backgroundColor: '#030a17', paddingLeft: '76px', paddingRight: '76px', paddingTop: '0px', paddingBottom: '72px'}}>
         {/* Arrow positioned at top of white container */}
         <div className="arrow-hero">
           <div className="div-block-35">
@@ -293,91 +330,109 @@ export default function Index() {
 
       {/* Third Section - What is BrandTok */}
       <section id="about" className="w-full" style={{ padding: '65px 24px 60px', backgroundColor: '#030a17' }}>
-        <div className="mx-auto text-center" style={{ maxWidth: '920px' }}>
-          {/* Pre-heading */}
-          <p 
-            className="font-montserrat uppercase"
-            style={{
-              backgroundImage: 'linear-gradient(80deg, #FF0000, #FF3333)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              textAlign: 'center',
-              textTransform: 'uppercase',
-              fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
-              fontSize: '16px',
-              lineHeight: '20px',
-              marginBottom: '24px'
-            }}
-          >
-            HERE'S WHAT AWAITS YOU...
-          </p>
-          
-          {/* Main Heading */}
-          <h2 
-            className="main-heading font-montserrat font-bold"
-            style={{
-              color: '#fff',
-              textAlign: 'center',
-              WebkitTextStrokeColor: '#fff',
-              WebkitTextFillColor: 'transparent',
-              backgroundImage: 'linear-gradient(#fff, #999)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              fontSize: '48px',
-              lineHeight: '55px',
-              marginBottom: '40px',
-              fontWeight: '700',
-              display: 'block',
-              width: '100%'
-            }}
-          >
-            What Is BrandTok?
-          </h2>
-          
-          {/* Body Text */}
-          <div className="max-w-4xl mx-auto space-y-6">
-            <p 
-              className="font-montserrat"
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontStyle: 'normal',
-                fontWeight: '600',
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontSize: '16px',
-                lineHeight: '24px'
-              }}
-            >
-              BrandTok is a viral content creation powerhouse. We're not a typical marketing agency. We're a partner for scaling business builders who are tired of burning cash on ads that don't work.
-            </p>
+        <div className="mx-auto" style={{ maxWidth: '1200px' }}>
+          {/* Flex container for two-column layout */}
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Left column - Content */}
+            <div className="md:w-1/2 text-left md:text-left">
+              {/* Pre-heading */}
+              <p 
+                className="font-montserrat uppercase text-center md:text-left"
+                style={{
+                  backgroundImage: 'linear-gradient(80deg, #FF0000, #FF3333)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  textTransform: 'uppercase',
+                  fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
+                  fontSize: '16px',
+                  lineHeight: '20px',
+                  marginBottom: '24px'
+                }}
+              >
+                HERE'S WHAT AWAITS YOU...
+              </p>
+              
+              {/* Main Heading */}
+              <h2 
+                className="main-heading font-montserrat font-bold text-center md:text-left"
+                style={{
+                  color: '#fff',
+                  WebkitTextStrokeColor: '#fff',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundImage: 'linear-gradient(#fff, #999)',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  fontSize: '48px',
+                  lineHeight: '55px',
+                  marginBottom: '30px',
+                  fontWeight: '700',
+                  display: 'block',
+                  width: '100%'
+                }}
+              >
+                What Is BrandTok?
+              </h2>
+              
+              {/* Body Text */}
+              <div className="space-y-6 text-center md:text-left">
+                <p 
+                  className="font-montserrat"
+                  style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontStyle: 'normal',
+                    fontWeight: '600',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    fontSize: '16px',
+                    lineHeight: '24px'
+                  }}
+                >
+                  BrandTok is a viral content creation powerhouse. We're not a typical marketing agency. We're a partner for scaling business builders who are tired of burning cash on ads that don't work.
+                </p>
+                
+                <p 
+                  className="font-montserrat"
+                  style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontStyle: 'normal',
+                    fontWeight: '600',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    fontSize: '16px',
+                    lineHeight: '24px'
+                  }}
+                >
+                  We understand your pain. You've tried Facebook ads. You've tried Google ads. You've probably tried other marketing companies too. And it didn't work to the level you wanted. You were burning your hard-earned cash with no ROI.
+                </p>
+                
+                <p 
+                  className="font-montserrat"
+                  style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                    fontStyle: 'normal',
+                    fontWeight: '600',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    fontSize: '16px',
+                    lineHeight: '24px'
+                  }}
+                >
+                  Times are changing. There's a new way to get customers — through organic viral content. We've built a system that delivers predictable, organic growth through strategic content creation on TikTok and Instagram. Our clients consistently see 20-30% revenue increases, fresh customer acquisition, and unprecedented reach. All without paid ads. We do all the heavy lifting for you.
+                </p>
+              </div>
+            </div>
             
-            <p 
-              className="font-montserrat"
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontStyle: 'normal',
-                fontWeight: '600',
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontSize: '16px',
-                lineHeight: '24px'
-              }}
-            >
-              We understand your pain. You've tried Facebook ads. You've tried Google ads. You've probably tried other marketing companies too. And it didn't work to the level you wanted. You were burning your hard-earned cash with no ROI.
-            </p>
-            
-            <p 
-              className="font-montserrat"
-              style={{
-                fontFamily: 'Montserrat, sans-serif',
-                fontStyle: 'normal',
-                fontWeight: '600',
-                color: 'rgba(255, 255, 255, 0.7)',
-                fontSize: '16px',
-                lineHeight: '24px'
-              }}
-            >
-              Times are changing. There's a new way to get customers — through organic viral content. We've built a system that delivers predictable, organic growth through strategic content creation on TikTok and Instagram. Our clients consistently see 20-30% revenue increases, fresh customer acquisition, and unprecedented reach. All without paid ads. We do all the heavy lifting for you.
-            </p>
+            {/* Right column - Image */}
+            <div className="md:w-1/2 flex justify-center order-first md:order-last">
+              <img 
+                src="/sam.webp" 
+                alt="Sam" 
+                className="rounded-lg shadow-2xl"
+                style={{ 
+                  maxWidth: '100%', 
+                  height: 'auto',
+                  borderRadius: '10px'
+                }}
+              />
+            </div>
           </div>
           
           {/* Course Modules Visual */}
