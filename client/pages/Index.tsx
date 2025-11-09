@@ -65,9 +65,23 @@ export default function Index() {
         <div className="blur-shape"></div>
         <div className="hero-background"></div>
         <div className="container" style={{paddingLeft: '0', paddingRight: '0', paddingTop: '86px', paddingBottom: '72px', maxWidth: '1400px', margin: '0 auto'}}>
+          {/* Mobile-only Hero Content - Above Video */}
+          <div className="md:hidden" style={{ padding: '0 20px 30px 20px' }}>
+            <div className="hero-badge mx-0 inline-flex items-center gap-2 rounded-full px-6 py-2 overflow-hidden relative bg-[#8B0000] max-w-[280px] mb-4" style={{border: '1px solid #FF3333'}}>
+              <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#8B0000] to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#8B0000] to-transparent z-10 pointer-events-none"></div>
+              <div className="animate-marquee-continuous whitespace-nowrap flex" style={{color: '#fff', fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontWeight: 400, fontSize: '12px', lineHeight: '20px', justifyContent: 'center', width: '100%'}}>
+                <span>ORGANIC GROWTH - VIRAL RESULTS - REVENUE SYSTEM -CONTENT POWERHOUSE</span>
+              </div>
+            </div>
+            <h1 className="hero-title leading-tight mb-4" style={{fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontSize: '54px', fontWeight: 'extrabold', lineHeight: '60px', textAlign: 'left'}}>
+              There Is A <span style={{background: 'linear-gradient(80deg, var(--blue), var(--light-blue) 90%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent'}}>"New Way"</span> To Predictably Get Viral Customers
+            </h1>
+          </div>
+          
           <div className="grid items-center hero-grid" style={{gridTemplateColumns: '58% 42%', gap: '0rem', paddingLeft: '24px', paddingRight: '24px'}}>
-            {/* Hero Content */}
-            <div className="hero-content text-left" style={{position: 'relative', zIndex: 10}}>
+            {/* Hero Content - Desktop version only */}
+            <div className="hero-content text-left md:block" style={{position: 'relative', zIndex: 10}}>
               <div className="hero-badge mx-0 inline-flex items-center gap-2 rounded-full px-6 py-2 overflow-hidden relative bg-[#8B0000] max-w-[280px]" style={{border: '1px solid #FF3333'}}>
                 <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#8B0000] to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#8B0000] to-transparent z-10 pointer-events-none"></div>
@@ -96,15 +110,18 @@ export default function Index() {
                     color: 'white',
                     textDecoration: 'none',
                     display: 'inline-block',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.2s ease',
+                    width: '100%',
+                    maxWidth: '100%',
+                    textAlign: 'center'
                   }}
                   onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1.1)'}
                   onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1)'}
                 >
-                  Get Started Today
+                  Book your free viral content audit call
                 </a>
               </div>
-              <div className="hero-stats flex items-center gap-3" style={{marginTop: '20px', opacity: '0.8'}}>
+              <div className="hero-stats flex items-center gap-3" style={{marginTop: '20px', opacity: '0.8', justifyContent: 'flex-start'}}>
                 <img 
                   src="/Traders Enrolled.png" 
                   alt="Businesses Transformed" 
@@ -146,6 +163,64 @@ export default function Index() {
             </div>
           </div>
           
+          {/* Mobile-only Content - Below Video */}
+          <div className="md:hidden" style={{ padding: '30px 20px 0 20px' }}>
+            <div className="hero-button-container flex flex-col items-start justify-start gap-4 mb-6">
+              <a 
+                href="#pricing"
+                className="hero-cta-button"
+                style={{
+                  backgroundImage: 'linear-gradient(80deg, #FF3333, #FF0000)',
+                  borderRadius: '5px',
+                  padding: '14px 70px',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  color: 'white',
+                  textDecoration: 'none',
+                  display: 'inline-block',
+                  transition: 'all 0.2s ease',
+                  width: '100%',
+                  maxWidth: '100%',
+                  textAlign: 'center'
+                }}
+                onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1.1)'}
+                onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1)'}
+              >
+                Book your free viral content audit call
+              </a>
+            </div>
+            <p className="mb-6" style={{fontFamily: 'Montserrat, sans-serif', fontWeight: 400, fontSize: '18px', lineHeight: '26px', color: 'rgba(255, 255, 255, 0.8)', maxWidth: '100%', margin: '0 0 30px 0', textAlign: 'left'}}>
+              Get more views and new customers than you could possibly handle — without using paid ads. We do all the heavy lifting for you. Let us build your viral organic customer acquisition system and watch your business scale like never before.
+            </p>
+            <div className="hero-stats flex items-center gap-3" style={{opacity: '0.8', marginBottom: '40px', justifyContent: 'flex-start'}}>
+              <img 
+                src="/Traders Enrolled.png" 
+                alt="Businesses Transformed" 
+                style={{width: '74px', height: 'auto'}}
+              />
+              <div className="flex items-center gap-1">
+                <span style={{
+                  fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
+                  fontSize: '16px',
+                  lineHeight: '20px',
+                  color: '#ffffff'
+                }}>
+                  1000+
+                </span>
+                <span style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: 400,
+                  fontSize: '16px',
+                  lineHeight: '20px',
+                  color: '#b7b7b7'
+                }}>
+                  Businesses Transformed
+                </span>
+              </div>
+            </div>
+          </div>
+          
           {/* Brand Logos Section - Replaces the previous icon/text elements */}
           <div className="mt-20" style={{position: 'relative', zIndex: 10, marginTop: '85px'}}>
             <div className="footer-divider change2 change3"></div>
@@ -175,7 +250,7 @@ export default function Index() {
                       stopOnMouseEnter: true,
                     }),
                   ]}
-                  className="w-full max-w-xs"
+                  className="w-full max-w-xs mx-auto"
                 >
                   <CarouselContent className="-ml-1">
                     <CarouselItem className="pl-1 basis-1/2">
@@ -425,7 +500,7 @@ export default function Index() {
               <img 
                 src="/sam.webp" 
                 alt="Sam" 
-                className="rounded-lg shadow-2xl"
+                className="rounded-lg shadow-2xl w-full max-w-md"
                 style={{ 
                   maxWidth: '100%', 
                   height: 'auto',
@@ -440,8 +515,8 @@ export default function Index() {
             <img 
               src="/Course Module.png" 
               alt="Course Modules" 
-              className="h-auto"
-              style={{ width: '812px' }}
+              className="h-auto w-full max-w-2xl"
+              style={{ width: '812px', maxWidth: '100%' }}
             />
           </div>
         </div>
