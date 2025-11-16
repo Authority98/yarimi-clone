@@ -43,13 +43,12 @@
     --accent: 221 45% 16%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 220 28% 18%;
     --input: 220 28% 18%;
     --ring: 0 100% 50%;
-
     --radius: 0.75rem;
 
     --sidebar-background: 222 60% 6%;
@@ -65,47 +64,11 @@
     --light-blue: #FF3333;
     --black: #000000;
     --dark-blue: #134181;
+    
+    /* WI Box Background Colors */
     --w-i-box-bg-top: rgba(255, 255, 255, 0.05);
     --w-i-box-bg-mid: rgba(255, 255, 255, 0.02);
     --w-i-box-bg-bot: rgba(255, 255, 255, 0.01);
-  }
-
-  .dark {
-    --background: 222 60% 6%;
-    --foreground: 210 40% 98%;
-
-    --card: 222 45% 8%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222 45% 8%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 0 100% 50%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 218 36% 14%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 220 26% 18%;
-    --muted-foreground: 215 20% 70%;
-
-    --accent: 221 45% 16%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 28% 18%;
-    --input: 220 28% 18%;
-    --ring: 0 100% 50%;
-    --sidebar-background: 222 60% 6%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 216 100% 56%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 221 45% 16%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 220 28% 18%;
-    --sidebar-ring: 0 100% 50%;
   }
 }
 
@@ -156,6 +119,12 @@
     border: 1px solid hsl(var(--border));
   }
   
+  /* Ensure font-montserrat elements with text-center maintain consistent sizing */
+  .font-montserrat.text-center {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
   /* Hero Section Responsive */
   @media (max-width: 768px) {
     .hero-grid {
@@ -181,11 +150,13 @@
     }
     
     .hero-title {
-      font-size: 54px !important;
-      line-height: 60px !important;
+      font-size: 28px !important;
+      line-height: 34px !important;
+      text-align: center !important;
     }
     
     .hero-badge {
+      display: none !important;
       max-width: 250px !important;
       padding: 8px 16px !important;
       margin-bottom: 20px !important;
@@ -204,6 +175,12 @@
       max-width: 100% !important;
     }
     
+    /* Ensure font-montserrat elements maintain consistent sizing */
+    .font-montserrat.text-center {
+      font-size: 16px !important;
+      line-height: 20px !important;
+    }
+    
     /* Mobile CTA button */
     .hero-cta-button {
       font-size: 16px !important;
@@ -219,11 +196,13 @@
   
   @media (max-width: 480px) {
     .hero-title {
-      font-size: 42px !important;
-      line-height: 48px !important;
+      font-size: 28px !important;
+      line-height: 34px !important;
+      text-align: center !important;
     }
     
     .hero-badge {
+      display: none !important;
       max-width: 200px !important;
       padding: 6px 12px !important;
       font-size: 11px !important;
@@ -234,10 +213,27 @@
       line-height: 33px !important;
     }
     
+    /* Ensure font-montserrat elements maintain consistent sizing */
+    .font-montserrat.text-center {
+      font-size: 16px !important;
+      line-height: 20px !important;
+    }
+    
     .hero-cta-button {
       font-size: 14px !important;
       padding: 12px 50px !important;
       max-width: 378px !important;
+    }
+    
+    /* Ensure all heading elements have consistent 28px font size on mobile */
+    h2 {
+      font-size: 28px !important;
+      line-height: 34px !important;
+    }
+    
+    .h1-white {
+      font-size: 28px !important;
+      line-height: 34px !important;
     }
   }
   
@@ -295,6 +291,12 @@
   
   @media (max-width: 480px) {
     .main-heading {
+      font-size: 28px !important;
+      line-height: 34px !important;
+    }
+    
+    /* Specific rule for h2.main-heading.font-montserrat.font-bold.text-center.md:text-left */
+    h2.main-heading.font-montserrat.font-bold.text-center {
       font-size: 28px !important;
       line-height: 34px !important;
     }
@@ -376,7 +378,7 @@
   }
   
   .blur-shape {
-    z-index: 5;
+    z-index: 1;
     filter: blur(400px);
     background-color: #FF0000;
     width: 1000px;
@@ -1002,6 +1004,7 @@
   @media (max-width: 480px) {
     .heading-8 {
       font-size: 28px !important;
+      line-height: 34px !important;
     }
     
     .heading-12 {

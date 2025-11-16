@@ -61,28 +61,53 @@ export default function Index() {
   return (
     <div className="bg-[radial-gradient(80%_60%_at_50%_0%,rgba(255,0,0,0.18),transparent),radial-gradient(40%_30%_at_80%_10%,rgba(255,51,51,0.18),transparent)]">
       {/* HERO */}
-      <section className="hero-glow border-b border-white/5 relative" style={{backgroundColor: '#030a17'}}>
+      <section className="hero-glow border-b border-white/5 relative" style={{backgroundColor: '#030a17', zIndex: 0}}>
         <div className="blur-shape"></div>
         <div className="hero-background"></div>
         <div className="container" style={{paddingLeft: '0', paddingRight: '0', paddingTop: '86px', paddingBottom: '72px', maxWidth: '1400px', margin: '0 auto'}}>
           {/* Mobile-only Hero Content - Above Video */}
-          <div className="md:hidden" style={{ padding: '0 20px 30px 20px' }}>
-            <div className="hero-badge mx-0 inline-flex items-center gap-2 rounded-full px-6 py-2 overflow-hidden relative bg-[#8B0000] max-w-[280px] mb-4" style={{border: '1px solid #FF3333'}}>
+          <div className="md:hidden" style={{ padding: '0 20px 10px 20px', position: 'relative', zIndex: 5, marginTop: '-40px' }}>
+            <div className="hero-badge mx-0 inline-flex items-center gap-2 rounded-full px-6 py-2 overflow-hidden relative bg-[#8B0000] max-w-[280px] mb-2 hidden" style={{border: "1px solid #FF3333"}}>
               <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#8B0000] to-transparent z-10 pointer-events-none"></div>
               <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#8B0000] to-transparent z-10 pointer-events-none"></div>
               <div className="animate-marquee-continuous whitespace-nowrap flex" style={{color: '#fff', fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontWeight: 400, fontSize: '12px', lineHeight: '20px', justifyContent: 'center', width: '100%'}}>
                 <span>ORGANIC GROWTH - VIRAL RESULTS - REVENUE SYSTEM -CONTENT POWERHOUSE</span>
               </div>
             </div>
-            <h1 className="hero-title leading-tight mb-4" style={{fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontSize: '54px', fontWeight: 'extrabold', lineHeight: '60px', textAlign: 'left'}}>
-              There Is A <span style={{background: 'linear-gradient(80deg, var(--blue), var(--light-blue) 90%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent'}}>"New Way"</span> To Predictably Get Viral Customers
+            <h1 className="hero-title leading-tight mb-1" style={{fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontSize: '54px', fontWeight: 'extrabold', lineHeight: '60px', textAlign: 'left', marginBottom: '37px'}}>
+              The Simpler, Faster Way to Turn Content Into <span style={{background: 'linear-gradient(80deg, var(--blue), var(--light-blue) 90%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent'}}>Daily Sales</span> — Without Posting More
             </h1>
+            <div className="hero-button-container flex flex-col items-center justify-start gap-4 mb-6" style={{marginTop: '35px'}}>
+              <a 
+                href="#pricing"
+                className="hero-cta-button"
+                style={{
+                  backgroundImage: 'linear-gradient(80deg, #FF3333, #FF0000)',
+                  borderRadius: '5px',
+                  padding: '14px 70px',
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '16px',
+                  fontWeight: '700',
+                  color: 'white',
+                  textDecoration: 'none',
+                  display: 'inline-block',
+                  transition: 'all 0.2s ease',
+                  width: 'auto',
+                  maxWidth: '100%',
+                  textAlign: 'center'
+                }}
+                onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1.1)'}
+                onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1)'}
+              >
+                Book your free viral content audit call
+              </a>
+            </div>
           </div>
           
           <div className="grid items-center hero-grid" style={{gridTemplateColumns: '58% 42%', gap: '0rem', paddingLeft: '24px', paddingRight: '24px'}}>
             {/* Hero Content - Desktop version only */}
-            <div className="hero-content text-left md:block" style={{position: 'relative', zIndex: 10}}>
-              <div className="hero-badge mx-0 inline-flex items-center gap-2 rounded-full px-6 py-2 overflow-hidden relative bg-[#8B0000] max-w-[280px]" style={{border: '1px solid #FF3333'}}>
+            <div className="hero-content text-left md:block" style={{position: 'relative', zIndex: 5}}>
+              <div className="hero-badge mx-0 inline-flex items-center gap-2 rounded-full px-6 py-2 overflow-hidden relative bg-[#8B0000] max-w-[280px] hidden" style={{border: "1px solid #FF3333"}}>
                 <div className="absolute left-0 top-0 w-8 h-full bg-gradient-to-r from-[#8B0000] to-transparent z-10 pointer-events-none"></div>
                 <div className="absolute right-0 top-0 w-8 h-full bg-gradient-to-l from-[#8B0000] to-transparent z-10 pointer-events-none"></div>
                 <div className="animate-marquee-continuous whitespace-nowrap flex" style={{color: '#fff', fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontWeight: 400, fontSize: '12px', lineHeight: '20px'}}>
@@ -90,7 +115,7 @@ export default function Index() {
                 </div>
               </div>
               <h1 className="hero-title leading-tight" style={{fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontSize: '58px', fontWeight: 'extrabold', marginTop: '15px', lineHeight: '65px'}}>
-                There Is A <span style={{background: 'linear-gradient(80deg, var(--blue), var(--light-blue) 90%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent'}}>"New Way"</span> To Predictably Get Viral Customers
+                The Simpler, Faster Way to Turn Content Into <span style={{background: 'linear-gradient(80deg, var(--blue), var(--light-blue) 90%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent'}}>Daily Sales</span> — Without Posting More
               </h1>
               <p style={{fontFamily: 'Montserrat, sans-serif', fontWeight: 400, fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.8)', marginTop: '20px', marginBottom: '30px', maxWidth: '90%'}}>
                 Get more views and new customers than you could possibly handle — without using paid ads. We do all the heavy lifting for you. Let us build your viral organic customer acquisition system and watch your business scale like never before.
@@ -149,7 +174,7 @@ export default function Index() {
               </div>
             </div>
             {/* Hero Video */}
-            <div className="hero-image relative flex justify-end" style={{position: 'relative', zIndex: 10}}>
+            <div className="hero-image relative flex justify-end" style={{position: 'relative', zIndex: 5}}>
               {/* Wistia Video Embed */}
               <div className="wistia_responsive_padding" style={{padding: '56.25% 0 0 0', position: 'relative', width: '550px'}}>
                 <div className="wistia_responsive_wrapper" style={{height: '100%', left: 0, position: 'absolute', top: 0, width: '100%'}}>
@@ -164,32 +189,7 @@ export default function Index() {
           </div>
           
           {/* Mobile-only Content - Below Video */}
-          <div className="md:hidden" style={{ padding: '30px 20px 0 20px' }}>
-            <div className="hero-button-container flex flex-col items-start justify-start gap-4 mb-6">
-              <a 
-                href="#pricing"
-                className="hero-cta-button"
-                style={{
-                  backgroundImage: 'linear-gradient(80deg, #FF3333, #FF0000)',
-                  borderRadius: '5px',
-                  padding: '14px 70px',
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '16px',
-                  fontWeight: '700',
-                  color: 'white',
-                  textDecoration: 'none',
-                  display: 'inline-block',
-                  transition: 'all 0.2s ease',
-                  width: '100%',
-                  maxWidth: '100%',
-                  textAlign: 'center'
-                }}
-                onMouseEnter={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1.1)'}
-                onMouseLeave={(e) => (e.target as HTMLAnchorElement).style.transform = 'scale(1)'}
-              >
-                Book your free viral content audit call
-              </a>
-            </div>
+          <div className="md:hidden" style={{ padding: '30px 20px 0 20px', position: 'relative', zIndex: 5 }}>
             <p className="mb-6" style={{fontFamily: 'Montserrat, sans-serif', fontWeight: 400, fontSize: '18px', lineHeight: '26px', color: 'rgba(255, 255, 255, 0.8)', maxWidth: '100%', margin: '0 0 30px 0', textAlign: 'left'}}>
               Get more views and new customers than you could possibly handle — without using paid ads. We do all the heavy lifting for you. Let us build your viral organic customer acquisition system and watch your business scale like never before.
             </p>
@@ -222,7 +222,7 @@ export default function Index() {
           </div>
           
           {/* Brand Logos Section - Replaces the previous icon/text elements */}
-          <div className="mt-20" style={{position: 'relative', zIndex: 10, marginTop: '85px'}}>
+          <div className="mt-20" style={{position: 'relative', zIndex: 5, marginTop: '85px'}}>
             <div className="footer-divider change2 change3"></div>
             
             {/* Brand Logos Section - Static on desktop */}
@@ -282,6 +282,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* SUCCESS STORIES */}
+      <SuccessStories />
 
       {/* VIDEO TRAINING SECTION */}
       <section id="training" className="video-training-section relative hidden" style={{backgroundColor: '#030a17', paddingLeft: '76px', paddingRight: '76px', paddingTop: '0px', paddingBottom: '72px'}}>
@@ -515,7 +518,7 @@ export default function Index() {
             <img 
               src="/Course Module.png" 
               alt="Course Modules" 
-              className="h-auto w-full max-w-2xl"
+              className="h-auto w-full max-w-2xl hidden"
               style={{ width: '812px', maxWidth: '100%' }}
             />
           </div>
@@ -533,9 +536,6 @@ export default function Index() {
 
       {/* STUDENTS WINS */}
       <StudentsWins />
-
-      {/* SUCCESS STORIES */}
-      <SuccessStories />
 
       {/* FAQ */}
       <FAQ />
