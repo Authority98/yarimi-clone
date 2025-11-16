@@ -148,66 +148,39 @@ const SuccessStories: React.FC = () => {
     }
   ];
 
-  // Load all Wistia scripts when component mounts
   useEffect(() => {
-    // Create a set to track loaded scripts and avoid duplicates
+
+
     const loadedScripts = new Set<string>();
     const scriptsToLoad: HTMLScriptElement[] = [];
 
+    // Load E-v1.js once
+    const ev1ScriptSrc = 'https://fast.wistia.com/assets/external/E-v1.js';
+    if (!loadedScripts.has(ev1ScriptSrc)) {
+      const ev1Script = document.createElement('script');
+      ev1Script.src = ev1ScriptSrc;
+      ev1Script.async = true;
+      scriptsToLoad.push(ev1Script);
+      loadedScripts.add(ev1ScriptSrc);
+    }
+
     testimonials.forEach(testimonial => {
       const videoId = testimonial.videoId;
+      const jsonpScriptSrc = `https://fast.wistia.com/embed/medias/${videoId}.jsonp`;
       
-      // For the special case videos (zz8c7lzku4, vf66rx9l1y, szf5ozjd4i, dpxesx41mk, 7rngrgibaz, 2t4lbz8u7v, rv8iv7qit2), load different scripts
-      if (videoId === "zz8c7lzku4" || videoId === "vf66rx9l1y" || videoId === "szf5ozjd4i" || 
-          videoId === "dpxesx41mk" || videoId === "7rngrgibaz" || videoId === "2t4lbz8u7v" || videoId === "rv8iv7qit2") {
-        const playerScriptSrc = "https://fast.wistia.com/player.js";
-        const embedScriptSrc = `https://fast.wistia.com/embed/${videoId}.js`;
-        
-        if (!loadedScripts.has(playerScriptSrc)) {
-          const playerScript = document.createElement('script');
-          playerScript.src = playerScriptSrc;
-          playerScript.async = true;
-          scriptsToLoad.push(playerScript);
-          loadedScripts.add(playerScriptSrc);
-        }
-        
-        if (!loadedScripts.has(embedScriptSrc)) {
-          const embedScript = document.createElement('script');
-          embedScript.src = embedScriptSrc;
-          embedScript.async = true;
-          embedScript.type = "module";
-          scriptsToLoad.push(embedScript);
-          loadedScripts.add(embedScriptSrc);
-        }
-      } else {
-        // For standard videos, load the standard scripts
-        const jsonpScriptSrc = `https://fast.wistia.com/embed/medias/${videoId}.jsonp`;
-        const externalScriptSrc = "https://fast.wistia.com/assets/external/E-v1.js";
-        
-        if (!loadedScripts.has(jsonpScriptSrc)) {
-          const jsonpScript = document.createElement('script');
-          jsonpScript.src = jsonpScriptSrc;
-          jsonpScript.async = true;
-          scriptsToLoad.push(jsonpScript);
-          loadedScripts.add(jsonpScriptSrc);
-        }
-        
-        if (!loadedScripts.has(externalScriptSrc)) {
-          const externalScript = document.createElement('script');
-          externalScript.src = externalScriptSrc;
-          externalScript.async = true;
-          scriptsToLoad.push(externalScript);
-          loadedScripts.add(externalScriptSrc);
-        }
+      if (!loadedScripts.has(jsonpScriptSrc)) {
+        const jsonpScript = document.createElement('script');
+        jsonpScript.src = jsonpScriptSrc;
+        jsonpScript.async = true;
+        scriptsToLoad.push(jsonpScript);
+        loadedScripts.add(jsonpScriptSrc);
       }
     });
 
-    // Add all scripts to the document
     scriptsToLoad.forEach(script => {
       document.body.appendChild(script);
     });
 
-    // Cleanup function to remove scripts when component unmounts
     return () => {
       scriptsToLoad.forEach(script => {
         if (document.body.contains(script)) {

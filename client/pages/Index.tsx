@@ -31,30 +31,18 @@ export default function Index() {
     script1.src = 'https://fast.wistia.com/embed/medias/ct3jnmk4vx.jsonp';
     script1.async = true;
     
-    const script2 = document.createElement('script');
-    script2.src = 'https://fast.wistia.com/assets/external/E-v1.js';
-    script2.async = true;
-    
     // Script for the new hero video
     const script3 = document.createElement('script');
     script3.src = 'https://fast.wistia.com/embed/medias/vfvunjpwvs.jsonp';
     script3.async = true;
     
-    const script4 = document.createElement('script');
-    script4.src = 'https://fast.wistia.com/player.js';
-    script4.async = true;
-    
     document.body.appendChild(script1);
-    document.body.appendChild(script2);
     document.body.appendChild(script3);
-    document.body.appendChild(script4);
     
     return () => {
       // Clean up scripts when component unmounts
-      document.body.removeChild(script1);
-      document.body.removeChild(script2);
-      document.body.removeChild(script3);
-      document.body.removeChild(script4);
+      if (document.body.contains(script1)) document.body.removeChild(script1);
+      if (document.body.contains(script3)) document.body.removeChild(script3);
     };
   }, []);
 
@@ -74,7 +62,7 @@ export default function Index() {
                 <span>ORGANIC GROWTH - VIRAL RESULTS - REVENUE SYSTEM -CONTENT POWERHOUSE</span>
               </div>
             </div>
-            <h1 className="hero-title leading-tight mb-1" style={{fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontSize: '54px', fontWeight: 'extrabold', lineHeight: '60px', textAlign: 'left', marginBottom: '37px'}}>
+            <h1 className="hero-title leading-tight mb-1">
               The Simpler, Faster Way to Turn Content Into <span style={{background: 'linear-gradient(80deg, var(--blue), var(--light-blue) 90%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent'}}>Daily Sales</span> — Without Posting More
             </h1>
             <div className="hero-button-container flex flex-col items-center justify-start gap-4 mb-6" style={{marginTop: '35px'}}>
@@ -114,7 +102,7 @@ export default function Index() {
                   <span>ORGANIC GROWTH - VIRAL RESULTS - REVENUE SYSTEM -CONTENT POWERHOUSE</span>
                 </div>
               </div>
-              <h1 className="hero-title leading-tight" style={{fontFamily: 'Montserrat-Bold, Montserrat, sans-serif', fontSize: '58px', fontWeight: 'extrabold', marginTop: '15px', lineHeight: '65px'}}>
+              <h1 className="hero-title leading-tight">
                 The Simpler, Faster Way to Turn Content Into <span style={{background: 'linear-gradient(80deg, var(--blue), var(--light-blue) 90%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent'}}>Daily Sales</span> — Without Posting More
               </h1>
               <p style={{fontFamily: 'Montserrat, sans-serif', fontWeight: 400, fontSize: '18px', lineHeight: '28px', color: 'rgba(255, 255, 255, 0.8)', marginTop: '20px', marginBottom: '30px', maxWidth: '90%'}}>
@@ -303,15 +291,7 @@ export default function Index() {
           paddingTop: '80px' // Extra space for arrow
         }}>
           {/* Heading */}
-          <h1 className="video-training-heading text-center" style={{
-            fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
-            fontSize: '48px',
-            fontWeight: 'bold',
-            color: '#000',
-            lineHeight: '44px',
-            fontStyle: 'italic',
-            marginBottom: '65px'
-          }}>
+          <h1 className="video-training-heading text-center">
             <strong>BrandTok Presents...</strong>
           </h1>
           
@@ -336,16 +316,7 @@ export default function Index() {
             
           {/* Offer text */}
           <div className="text-center">
-            <h2 className="video-training-offer" style={{
-              fontFamily: 'Montserrat-Bold, Montserrat, sans-serif',
-              fontSize: '30px',
-              fontWeight: 'bold',
-              color: '#000',
-              fontStyle: 'italic',
-              lineHeight: '44px',
-              marginBottom: '50px',
-              textAlign: 'center'
-            }}>
+            <h2 className="video-training-offer">
               <strong>Stop Burning Cash On Ads That Don't Work</strong>
             </h2>
             
@@ -433,7 +404,7 @@ export default function Index() {
               
               {/* Main Heading */}
               <h2 
-                className="main-heading font-montserrat font-bold text-center md:text-left"
+                className="main-heading font-montserrat font-bold text-center md:text-left brandtok-heading"
                 style={{
                   color: '#fff',
                   WebkitTextStrokeColor: '#fff',

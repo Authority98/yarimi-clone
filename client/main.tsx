@@ -1,4 +1,9 @@
 import "./global.css";
+// Ensure Wistia global object exists before scripts load
+if (typeof window !== 'undefined') {
+  window.Wistia = window.Wistia || {};
+}
+
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
